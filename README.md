@@ -4,22 +4,22 @@ This is a simple UP and DOWN counter for Sailfish OS.
 
 FEATURES:
 
-)Count up and down 
++)Count up and down 
 
-)Reset function
++)Reset function
 
-)Change step size 
++)Change step size 
 
-)Haptic feedback (only Warehouse Version until QtFeedback 5.0 is allowed in official JOLLA-Harbour)
++)Haptic feedback (only Warehouse Version until QtFeedback 5.0 is allowed in official JOLLA-Harbour)
 
-)Acoustic feedback
++)Acoustic feedback
 
-)Portrait and landscape mode (lock to portrait mode)
++)Portrait and landscape mode (lock to portrait mode)
 
-)Active cover view (count up and down from cover view)
++)Active cover view (count up and down from cover view)
 
 Planned:
 
-)Set start value 
++)Set start value 
 
-)Save function
++)Save function
