@@ -1,0 +1,11 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+X-Nemo-Application-Type=silica-qt5
+Icon=upanddown
+Exec=upanddown
+Name=upanddown
+# translation example:
+# your app name in German locale (de)
+Name[de]=upanddown
+

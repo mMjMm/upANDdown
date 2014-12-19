@@ -22,4 +22,5 @@ Planned:
 
 +)Set start value 
 
-+)Save function
++)Save function (plus automatic save when you quit the counter)
+
