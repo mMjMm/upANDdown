@@ -106,10 +106,27 @@ Page {
         color: "white"
 
     }
+
     Text {
         id:describtion5
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: describtion4.bottom
+        font.pointSize: 20
+        anchors.topMargin: 5
+        text: "source code"
+        color: Theme.highlightColor
+
+        MouseArea {
+            id : buttonMouseArea2
+            anchors.fill : parent
+            onClicked: Qt.openUrlExternally("https://github.com/mMjMm/upANDdown")
+        }
+
+    }
+    Text {
+        id:describtion6
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: describtion5.bottom
         font.pointSize: 12
         anchors.topMargin: 10
         text: "For feedback, bugreports, feature requests or <br> donations please use the email-adress below:"
@@ -120,7 +137,7 @@ Page {
     Text {
         id:mailto
         anchors.horizontalCenter: parent.horizontalCenter
-        anchors.top: describtion5.bottom
+        anchors.top: describtion6.bottom
         font.pointSize: 12
         anchors.topMargin: 5
         text:"muiki@mur.at"

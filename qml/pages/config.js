@@ -155,7 +155,7 @@ function getselecthaptic() {
         var rs = tx.executeSql('SELECT * FROM settings ;');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
-            console.debug(" Haptic:" + rs.rows.item(i).Haptic)
+          //  console.debug(" Haptic:" + rs.rows.item(i).Haptic)
             select =  rs.rows.item(i).Haptic
         }
 
@@ -173,7 +173,7 @@ function getselectPORT() {
         var rs = tx.executeSql('SELECT * FROM settings ;');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
-            console.debug(" PortLock:" + rs.rows.item(i).PortLock)
+            //console.debug(" PortLock:" + rs.rows.item(i).PortLock)
             selectPortLock =  rs.rows.item(i).PortLock
         }
 
@@ -193,7 +193,7 @@ function getselectSOUND() {
         var rs = tx.executeSql('SELECT * FROM settings ;');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
-            console.debug(" SoundLock:" + rs.rows.item(i).SoundLock)
+           // console.debug(" SoundLock:" + rs.rows.item(i).SoundLock)
             selectSoundLock =  rs.rows.item(i).SoundLock
         }
 

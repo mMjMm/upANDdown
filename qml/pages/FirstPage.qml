@@ -125,7 +125,7 @@ Page{
         if (lockport===undefined)
         {
 
-            console.debug("lockport ist undefiend")
+         //   console.debug("lockport ist undefiend")
             DB.setlockportnull();
 
         }
@@ -143,7 +143,7 @@ Page{
         if (locksound===undefined)
         {
 
-            console.debug("soundport ist undefiend")
+          //  console.debug("soundport ist undefiend")
             DB.setlocksoundnull();
 
         }
