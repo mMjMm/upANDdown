@@ -1,6 +1,16 @@
+
 /*
 
+
+* Copyright 2014 Michael Johannes Muik
+
+* This program is free software: you can redistribute it and/or modify it under
+* the terms of the GNU General Public License version 3 as published by the
+* Free Software Foundation. See http://www.gnu.org/copyleft/gpl.html the full
+* text of the license.
+
 */
+
 
 import QtQuick 2.1
 import Sailfish.Silica 1.0

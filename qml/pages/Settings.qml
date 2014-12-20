@@ -1,6 +1,13 @@
 ﻿/*
 
 
+* Copyright 2014 Michael Johannes Muik
+
+* This program is free software: you can redistribute it and/or modify it under
+* the terms of the GNU General Public License version 3 as published by the
+* Free Software Foundation. See http://www.gnu.org/copyleft/gpl.html the full
+* text of the license.
+
 */
 
 import QtQuick 2.1
@@ -45,14 +52,14 @@ Dialog{
 
         if(hapticswitch.checked == true)
         {
-            console.log("gedrückt und gecheckt")
+           // console.log("gedrückt und gecheckt")
 
             DB.sethaptics();
             lockhaptics=1;
         }
         else{
 
-            console.log("nicht eins sondern null")
+            //console.log("nicht eins sondern null")
 
             DB.unsethaptics();
             lockhaptics=0;
@@ -92,7 +99,7 @@ Dialog{
 
         if(soundlockswitch.checked == true)
         {
-            console.log("gedrückt und gecheckt")
+            //console.log("gedrückt und gecheckt")
 
 
             DB.setlocksoundeins();
@@ -102,7 +109,7 @@ Dialog{
         }
         else{
 
-            console.log("nicht eins sondern null")
+            //console.log("nicht eins sondern null")
             DB.setlocksoundnull();
             locksoundd=0;
 
