@@ -40,7 +40,7 @@ Page {
         Label {
             x: Theme.paddingLarge
             anchors.topMargin: 30
-            text: qsTr("upanddown ver.0.5.1 ")
+            text: qsTr("upanddown ver.0.6.0 ")
             color: Theme.secondaryHighlightColor
             font.pixelSize: Theme.fontSizeExtraLarge
         }

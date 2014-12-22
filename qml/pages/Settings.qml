@@ -23,6 +23,9 @@ Dialog{
     property int step
     property int stepperr:1
 
+
+     property int startvalue
+
     property var lockhaptic
     property int lockhaptics
 
@@ -193,7 +196,7 @@ Dialog{
                     maximumValue:10
                     stepSize: 1
                     width: parent.width+10
-                    valueText: value.toFixed(2)
+                    valueText: value.toFixed(0)
 
                     onValueChanged: {
                         stepperr = value
@@ -203,6 +206,30 @@ Dialog{
                 }
 
 
+                Label{
+                    anchors.horizontalCenter:colummm.horizontalCenter
+                    anchors.horizontalCenterOffset: -140
+                    font.family: Theme.fontFamily
+                    color:"white"
+                    font.pixelSize: Theme.fontSizeMedium
+                    text:"Set start value:"
+                }
+
+                Slider {
+                    id: slider_start
+                    value:0
+                    minimumValue:0
+                    maximumValue:1000
+                    stepSize: 10
+                    width: parent.width+10
+                    valueText: value.toFixed(0)
+
+                    onValueChanged: {
+                    startvalue = value
+                    }
+
+                    label: "Start Value"
+                }
 
                 TextSwitch {
                     id:hapticswitch
@@ -243,7 +270,7 @@ Dialog{
     }
 
     onAccepted: {
-        mainPage.step =stepperr;mainPage.locksoundd=locksoundd; mainPage.lockhaptics=lockhaptics
+        mainPage.step =stepperr;mainPage.count =startvalue; mainPage.locksoundd=locksoundd; mainPage.lockhaptics=lockhaptics
 
 
     }

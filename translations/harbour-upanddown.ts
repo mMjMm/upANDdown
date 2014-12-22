@@ -4,20 +4,28 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="27"/>
+        <location filename="../qml/pages/About.qml" line="37"/>
         <source>about upanddown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="33"/>
-        <source>upanddown ver.0.5.1 </source>
+        <location filename="../qml/pages/About.qml" line="43"/>
+        <source>upanddown ver.0.6.0 </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Counts</name>
+    <message>
+        <location filename="../qml/pages/Counts.qml" line="41"/>
+        <source>counted</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="265"/>
+        <location filename="../qml/pages/FirstPage.qml" line="284"/>
         <source>upanddown</source>
         <translation type="unfinished"></translation>
     </message>
