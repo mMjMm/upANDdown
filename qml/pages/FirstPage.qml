@@ -230,7 +230,7 @@ Page{
 
         PullDownMenu {
 
-
+  /*
             MenuItem {
                 text: "save"
                 onClicked: {
@@ -239,14 +239,14 @@ Page{
                 }
             }
 
-            MenuItem {
+             MenuItem {
                 text: "counted"
                 onClicked: {
 
                     pageStack.push(Qt.resolvedUrl("Counts.qml"))
                 }
             }
-
+*/
 
             MenuItem {
                 text: "settings"

@@ -23,7 +23,7 @@ Page {
     Rectangle {
 
         id:root //it's a good idea to name it always root so I'm able to remember it everytime ;)
-        width: 540 ; height: 960
+        width: Screen.width ; height: Screen.height
         color:"#841773"
         opacity: 0.4
     }

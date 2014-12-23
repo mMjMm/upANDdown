@@ -23,8 +23,7 @@ Dialog{
     property int step
     property int stepperr:1
 
-
-     property int startvalue
+    property int startvalue
 
     property var lockhaptic
     property int lockhaptics
@@ -191,7 +190,7 @@ Dialog{
 
                 Slider {
                     id: sliderer
-                    value: 1
+                    value: mainPage.step
                     minimumValue:1
                     maximumValue:10
                     stepSize: 1
@@ -217,8 +216,8 @@ Dialog{
 
                 Slider {
                     id: slider_start
-                    value:0
-                    minimumValue:0
+                    value:mainPage.count
+                    minimumValue:-1000
                     maximumValue:1000
                     stepSize: 10
                     width: parent.width+10

@@ -19,6 +19,7 @@
   SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+//current count mit date!
 //config.js
 
 .import QtQuick.LocalStorage 2.0 as LS
@@ -40,6 +41,7 @@ function initialize() {
                 function(tx) {
                     tx.executeSql('CREATE TABLE IF NOT EXISTS settings(Haptic NUMBER, PortLock NUMBER,  SoundLock NUMBER)');
                 //    tx.executeSql('CREATE TABLE IF NOT EXISTS count(Id AUTOINCREMET, Date , Count NUMBER)');
+
                 });
 }
 
