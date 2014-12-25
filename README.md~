@@ -17,8 +17,6 @@ FEATURES:
 
 +)Acoustic feedback
 
-+)set start value (in steps of ten between -1000 and +1000)
-
 +)Portrait and landscape mode (lock to portrait mode)
 
 +)Active cover view (count up and down from cover view)
