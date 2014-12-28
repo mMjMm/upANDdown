@@ -30,4 +30,12 @@
         <translation type="unfinished"></translation>
     </message>
 </context>
+<context>
+    <name>SaveAs</name>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="41"/>
+        <source>Save As</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
 </TS>

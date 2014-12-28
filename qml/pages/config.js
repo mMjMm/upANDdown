@@ -40,7 +40,7 @@ function initialize() {
     db.transaction(
                 function(tx) {
                     tx.executeSql('CREATE TABLE IF NOT EXISTS settings(Haptic NUMBER, PortLock NUMBER,  SoundLock NUMBER)');
-                //    tx.executeSql('CREATE TABLE IF NOT EXISTS count(Id AUTOINCREMET, Date , Count NUMBER)');
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS currentCount(CountName, Count NUMBER)');
 
                 });
 }

@@ -30,7 +30,8 @@ OTHER_FILES += \
     rpm/harbour-upanddown.yaml \
     rpm/harbour-upanddown.spec \
     rpm/harbour-upanddown.changes.in \
-    qml/pages/Counts.qml
+    qml/pages/Counts.qml \
+    qml/pages/SaveAs.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

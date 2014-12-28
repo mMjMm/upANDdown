@@ -197,7 +197,7 @@ Page{
         if ( n.length == 6)
 
         { fontsize=160;
-            coverfontsize=30;
+            coverfontsize=55;
         }
 
         if ( n.length == 7)
@@ -230,12 +230,12 @@ Page{
 
         PullDownMenu {
 
-  /*
-            MenuItem {
-                text: "save"
-                onClicked: {
 
-                    //
+            MenuItem {
+                text: "save as"
+                onClicked: {
+            pageStack.push(Qt.resolvedUrl("SaveAs.qml"))
+
                 }
             }
 
@@ -246,7 +246,7 @@ Page{
                     pageStack.push(Qt.resolvedUrl("Counts.qml"))
                 }
             }
-*/
+
 
             MenuItem {
                 text: "settings"
