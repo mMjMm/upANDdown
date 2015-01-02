@@ -40,7 +40,7 @@ Page {
         Label {
             x: Theme.paddingLarge
             anchors.topMargin: 30
-            text: qsTr("upanddown ver.0.6.0 ")
+            text: qsTr("upanddown ver.0.8.5 ")
             color: Theme.secondaryHighlightColor
             font.pixelSize: Theme.fontSizeExtraLarge
         }
@@ -90,7 +90,7 @@ Page {
         anchors.top: describtion1.bottom
         font.pointSize: 12
         anchors.topMargin: 5
-        text: "with haptic feedback"
+        text: "with haptic and acoustic feedback"
         color: "white"
 
     }
@@ -101,7 +101,7 @@ Page {
         anchors.top: describtion2.bottom
         font.pointSize: 12
         anchors.topMargin: 5
-        text: " reset function"
+        text: " reset and save function "
         color: "white"
 
     }

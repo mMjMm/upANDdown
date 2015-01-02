@@ -27,6 +27,8 @@ Page{
 
     property int count
     property int step:1
+    property string namecounterer: " "
+
 
     property  var lockhaptic
     property  int lockhaptics
@@ -106,11 +108,10 @@ Page{
 
         // Initialize the database
         DB.initialize();
-
+        DB.fontsizer();
         lockhaptic= DB.getselecthaptic();
         lockport=DB.getselectPORT();
         locksound=DB.getselectSOUND();
-
 
         //check if haptic, sound, and port is selected (or for the first start of the app give it a value
 
@@ -120,13 +121,13 @@ Page{
             console.debug("select ist undefiend")
             DB.sethapticseins();
 
-         //   lockhaptic=1
+            //   lockhaptic=1
         }
 
         if (lockport===undefined)
         {
 
-         //   console.debug("lockport ist undefiend")
+            //   console.debug("lockport ist undefiend")
             DB.setlockportnull();
 
         }
@@ -144,12 +145,12 @@ Page{
         if (locksound===undefined)
         {
 
-          //  console.debug("soundport ist undefiend")
+            //  console.debug("soundport ist undefiend")
             DB.setlocksoundnull();
 
         }
 
-             locksoundd=DB.getselectSOUND();
+        locksoundd=DB.getselectSOUND();
     }
 
 
@@ -168,55 +169,11 @@ Page{
     }
 
 
-    //resize the font
-
-    function fontsizer(){
-
-        //convert the number count to a string to use the toString() function
-        var num =count;
-
-        var n=num.toString();
-
-
-        if ( n.length == 2)
-
-        { coverfontsize=130;  }
-
-        if ( n.length == 3)
-
-        { coverfontsize=100;  }
-
-        if ( n.length == 4)
-
-        { coverfontsize=85;  }
-
-        if ( n.length == 5)
-
-        { coverfontsize=80;  }
-
-        if ( n.length == 6)
-
-        { fontsize=160;
-            coverfontsize=55;
-        }
-
-        if ( n.length == 7)
-
-        {fontsize=140;}
-
-        if ( n.length == 8)
-
-        {fontsize=120;}
-
-        if ( n.length == 9)
-        {fontsize=100;}
-
-    }
 
 
     //Reset counter function
     function reset() {
-        remorse.execute("Reset Counter", function() { count=0 ;fontsize=200})
+        remorse.execute("Reset Counter", function() { count=0 ;fontsize=200; namecounterer=" "})
     }
 
     //reset counter animation?
@@ -234,12 +191,12 @@ Page{
             MenuItem {
                 text: "save as"
                 onClicked: {
-            pageStack.push(Qt.resolvedUrl("SaveAs.qml"))
+                    pageStack.push(Qt.resolvedUrl("SaveAs.qml"))
 
                 }
             }
 
-             MenuItem {
+            MenuItem {
                 text: "counted"
                 onClicked: {
 
@@ -278,11 +235,36 @@ Page{
         {
             id: column
             width: root.width
-            spacing: 35
+            spacing:10
+
             PageHeader
             {
                 title: qsTr("upanddown")
             }
+        }
+
+
+
+
+        Label {
+            id:textfade
+            x: Theme.paddingLarge
+            y:97
+
+
+            text:namecounterer.substring(0,22);
+
+            //text: qsTr(namecounterer)
+            color: Theme.secondaryHighlightColor
+            font.pixelSize: Theme.fontSizeLarge
+
+        }
+
+        OpacityRampEffect {
+
+            sourceItem: textfade
+            direction: OpacityRamp.LeftToRight
+            offset:0.7
         }
 
         Text{
@@ -296,8 +278,8 @@ Page{
         //import from Buttons.qml
         Buttons{
             id:buttons
-              soundanonn:locksoundd
-              hapticson: lockhaptics
+            soundanonn:locksoundd
+            hapticson: lockhaptics
         }
     }
 }

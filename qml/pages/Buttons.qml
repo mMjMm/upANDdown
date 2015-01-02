@@ -15,7 +15,7 @@ import QtFeedback 5.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.0
 
-
+import "config.js" as DB
 
 Item{
 
@@ -97,7 +97,7 @@ HapticsEffect {
             soundDown.play()
             }
             decrement()
-            fontsizer()
+            DB.fontsizer()
 
         }
 
@@ -170,8 +170,7 @@ onReleased:         {
             soundUp.play()
             }
             increment()
-            fontsizer()
-
+            DB.fontsizer()
         }
 
         onReleased:

@@ -8,7 +8,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>upanddown ver.0.5.1 </source>
+        <source>upanddown ver.0.8.5 </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

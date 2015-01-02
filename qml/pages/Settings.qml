@@ -28,6 +28,7 @@ Dialog{
     property var lockhaptic
     property int lockhaptics
 
+
     property var lockport
 
     property var locksound
@@ -41,8 +42,9 @@ Dialog{
         DB.initialize();
 
         lockhaptic= DB.getselecthaptic();
-        lockhaptics= DB.getselecthaptic();
 
+
+        lockhaptics= DB.getselecthaptic();
 
         lockport=DB.getselectPORT();
 
@@ -50,26 +52,25 @@ Dialog{
         locksoundd=locksound;
     }
 
+
     function hapticswitched(){
 
         if(hapticswitch.checked == true)
         {
            // console.log("gedrückt und gecheckt")
-
             DB.sethaptics();
             lockhaptics=1;
         }
         else{
-
             //console.log("nicht eins sondern null")
-
             DB.unsethaptics();
             lockhaptics=0;
-
-
         }
-
     }
+
+
+
+
 
     function lockswitched(){
 
@@ -120,6 +121,8 @@ Dialog{
 
     }
 
+
+
     SilicaFlickable {
 
 
@@ -146,17 +149,6 @@ Dialog{
 
             }
 
-
-
-        /*    MenuItem {
-
-                text: "drop tables"
-
-                onClicked: {
-                    DB.dropTables();
-
-                }
-           }*/
         }
 
 
@@ -250,6 +242,7 @@ Dialog{
                     description: "Enable/disable Audio feedback"
                     onCheckedChanged: {
                         soundlockswitched();
+                   //     setze eine var true... und unten bei on acceptet frageich ob das hier...
 
                     }
                 }
@@ -274,7 +267,11 @@ Dialog{
 
     }
 
+onRejected:
+{
 
+
+}
 }
 
 

@@ -10,31 +10,23 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="43"/>
-        <source>upanddown ver.0.6.0 </source>
+        <source>upanddown ver.0.8.5 </source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Counts</name>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="41"/>
-        <source>counted</source>
+        <location filename="../qml/pages/Counts.qml" line="65"/>
+        <source>Counted</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>FirstPage</name>
     <message>
-        <location filename="../qml/pages/FirstPage.qml" line="284"/>
+        <location filename="../qml/pages/FirstPage.qml" line="242"/>
         <source>upanddown</source>
-        <translation type="unfinished"></translation>
-    </message>
-</context>
-<context>
-    <name>SaveAs</name>
-    <message>
-        <location filename="../qml/pages/SaveAs.qml" line="41"/>
-        <source>Save As</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

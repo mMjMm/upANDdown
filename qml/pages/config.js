@@ -178,7 +178,7 @@ function getselecthaptic() {
         var rs = tx.executeSql('SELECT * FROM settings ;');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
-          //  console.debug(" Haptic:" + rs.rows.item(i).Haptic)
+           console.debug(" Haptic:" + rs.rows.item(i).Haptic)
             select =  rs.rows.item(i).Haptic
         }
 
@@ -227,15 +227,70 @@ function getselectSOUND() {
 }
 
 
+//save the counts
 
 
-function dropTables() {
+// This function is used to write a setting into the database NAME
+function insertCOUNTNAME(CountName, Count) {
+    var db = getDatabase();
+    var res = "";
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('INSERT INTO currentCount (CountName, Count) VALUES (?,?);', [CountName, Count]);
+
+
+        console.log(rs.rowsAffected)
+
+    }
+    );
+    // The function returns “OK” if it was successful, or “Error” if it wasn't
+    return res;
+}
+
+
+
+// This function is used to retrieve a name from the database
+
+
+function getCountName() {
+
+    var text
+     var countnumber
+    var db = getDatabase();
+    var res="";
+
+    db.transaction(function(tx) {
+        var rs = tx.executeSql('SELECT * FROM currentCount');
+        for (var i = 0; i < rs.rows.length; i++) {
+            //DEBUG
+            console.debug(" CountName:" + rs.rows.item(i).CountName + " Count:" + rs.rows.item(i).Count   )
+
+
+            text =   rs.rows.item(i).CountName
+            countnumber =   rs.rows.item(i).Count
+
+            mycounts.append({name:text, counterer:countnumber});
+
+
+
+        }
+
+    })
+
+
+    return text
+
+}
+
+
+
+
+function deletecount(countLoeschen) {
     var db = getDatabase();
 
      db.transaction(
                 function(tx) {
-                    // table löschen
-                    tx.executeSql("DROP TABLE IF EXISTS settings");
+                    // spieler löschen
+                    tx.executeSql("DELETE  FROM currentCount WHERE CountName = ? ", countLoeschen);
 
                 }
                 )
@@ -245,3 +300,69 @@ function dropTables() {
 
 
 
+
+
+
+
+function dropTables() {
+    var db = getDatabase();
+
+     db.transaction(
+                function(tx) {
+                    // table löschen
+                    tx.executeSql("DROP TABLE IF EXISTS settings");
+  tx.executeSql("DROP TABLE IF EXISTS currentCount");
+                }
+                )
+}
+
+
+
+
+
+/////////////////////////////////////////////////
+
+//resize the font
+
+function fontsizer(){
+
+    //convert the number count to a string to use the toString() function
+    var num =mainPage.count;
+
+    var n=num.toString();
+
+
+    if ( n.length == 2)
+
+    { mainPage.coverfontsize=130;  }
+
+    if ( n.length == 3)
+
+    { mainPage.coverfontsize=100;  }
+
+    if ( n.length == 4)
+
+    { mainPage.coverfontsize=85;  }
+
+    if ( n.length == 5)
+
+    { mainPage.coverfontsize=80;  }
+
+    if ( n.length == 6)
+
+    { mainPage.fontsize=160;
+        mainPage.coverfontsize=55;
+    }
+
+    if ( n.length == 7)
+
+    {mainPage.fontsize=140;}
+
+    if ( n.length == 8)
+
+    {mainPage.fontsize=120;}
+
+    if ( n.length == 9)
+    {mainPage.fontsize=100;}
+
+}

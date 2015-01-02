@@ -13,14 +13,22 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 
+
+
+
 CoverBackground {
     id:parent
+   // property int coverfontsize:180
 
+    Component.onCompleted: {
+mainPage.coverfontsize
+
+    }
 
     Rectangle {
         anchors.fill: parent
         color:"#841773"
-        opacity: 0.5
+        opacity: 0.7
 
     }
     PageHeader{
