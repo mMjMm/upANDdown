@@ -16,6 +16,16 @@ import "config.js" as DB
 Page{
     id:page
 
+    function reset() {
+        remorse.execute("DELETE ALL COUNTS", function() { DB.dropTables() ;pageStack.replace(Qt.resolvedUrl("Counts.qml"))})
+    }
+
+    //reset counter animation?
+    RemorsePopup { id: remorse }
+
+
+
+
 
     //Emitted after component "startup" has completed. This can be used to execute script code at startup, once the full QML environment has been established.
     Component.onCompleted: {
@@ -39,6 +49,23 @@ Page{
     SilicaFlickable {
 
         anchors.fill: parent
+
+        PullDownMenu{
+
+            MenuItem {
+                text: "delete all"
+                onClicked: {
+
+
+                    reset()
+
+
+
+            }
+        } }
+
+
+
 
         ListModel {
 
@@ -153,7 +180,6 @@ Page{
         }
     }
 }
-
 
 
 

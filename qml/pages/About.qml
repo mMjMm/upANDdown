@@ -16,6 +16,7 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 
 
+
 Page {
 
     id: page
@@ -40,7 +41,7 @@ Page {
         Label {
             x: Theme.paddingLarge
             anchors.topMargin: 30
-            text: qsTr("upanddown ver.0.8.5 ")
+            text: qsTr("upanddown ver.0.8.1 ")
             color: Theme.secondaryHighlightColor
             font.pixelSize: Theme.fontSizeExtraLarge
         }
@@ -90,7 +91,7 @@ Page {
         anchors.top: describtion1.bottom
         font.pointSize: 12
         anchors.topMargin: 5
-        text: "with haptic and acoustic feedback"
+        text: "(with haptic --> check out the warehouse version) and acoustic feedback"
         color: "white"
 
     }
@@ -161,7 +162,6 @@ Page {
     }
 
 }
-
 
 
 

@@ -22,16 +22,17 @@ OTHER_FILES += \
     qml/pages/FirstPage.qml \
     translations/*.ts \
     qml/pages/config.js \
-    qml/pages/Buttons.qml \
-    qml/pages/Settings.qml \
     qml/pages/About.qml \
     harbour-upanddown.desktop \
     qml/harbour-upanddown.qml \
     rpm/harbour-upanddown.yaml \
     rpm/harbour-upanddown.spec \
     rpm/harbour-upanddown.changes.in \
-    qml/pages/Counts.qml \
-    qml/pages/SaveAs.qml
+    qml/pages/Buttons.qml \
+    qml/pages/SaveAs.qml \
+    qml/pages/Settings.qml \
+    qml/pages/Counter.qml \
+    qml/pages/Counts.qml
 
 # to disable building translations every time, comment out the
 # following CONFIG line

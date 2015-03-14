@@ -216,7 +216,7 @@ function getselectSOUND() {
         var rs = tx.executeSql('SELECT * FROM settings ;');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
-           // console.debug(" SoundLock:" + rs.rows.item(i).SoundLock)
+           console.debug(" SoundLock:" + rs.rows.item(i).SoundLock)
             selectSoundLock =  rs.rows.item(i).SoundLock
         }
 

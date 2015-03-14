@@ -31,13 +31,13 @@ Page{
 
 
     property  var lockhaptic
-    property  int lockhaptics
+    property  var lockhaptics
 
     property  var lockport
 
 
     property  var locksound
-    property  int locksoundd
+    property  var locksoundd
 
 
     property int fontsize:200
@@ -46,7 +46,7 @@ Page{
 
     property var orientat: Orientation.All
 
-    allowedOrientations : orientat
+    allowedOrientations : Orientation.Portrait
 
     //  Function to change to Portrait mode only
     function lockTOport() {
@@ -57,8 +57,8 @@ Page{
     //  remember PropertyChanges vs AnchorChanges!
 
 
-    state: (Orientation.Portrait = isPortrait) ? "portrait" : "landscape"
-
+   // state: (Orientation.Portrait = isPortrait) ? "portrait" : "landscape"
+state: "portrait"
     states: [
         State {
             name: "landscape"
@@ -121,7 +121,7 @@ Page{
             console.debug("select ist undefiend")
             DB.sethapticseins();
 
-            //   lockhaptic=1
+               lockhaptic=1
         }
 
         if (lockport===undefined)
@@ -132,7 +132,7 @@ Page{
 
         }
 
-        lockhaptic= DB.getselecthaptic();
+     //   lockhaptic= DB.getselecthaptic();
         lockport=DB.getselectPORT();
         lockhaptics=lockhaptic;
 
@@ -283,7 +283,6 @@ Page{
         }
     }
 }
-
 
 
 

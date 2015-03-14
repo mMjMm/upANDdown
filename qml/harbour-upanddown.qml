@@ -36,8 +36,6 @@ ApplicationWindow
 
         FirstPage{
             id:mainPage
-
-
         }
     }
 

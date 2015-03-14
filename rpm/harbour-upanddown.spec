@@ -13,7 +13,7 @@ Name:       harbour-upanddown
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    Simple counter application
-Version:    0.8.5
+Version:    0.8.1
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE

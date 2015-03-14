@@ -1,4 +1,6 @@
-﻿/*
+﻿
+
+/*
 
 
 * Copyright 2014 Michael Johannes Muik
@@ -20,106 +22,61 @@ import "config.js" as DB
 
 Dialog{
 
-    property int step
+    property var step
     property int stepperr:1
 
     property int startvalue
 
-    property var lockhaptic
-    property int lockhaptics
-
-
-    property var lockport
+    property var  lockhaptic
+    property  int  lockhaptics
 
     property var locksound
-    property var locksoundd
-
-
+    property int locksoundd
 
     //Emitted after component "startup" has completed. This can be used to execute script code at startup, once the full QML environment has been established.
+
     Component.onCompleted: {
         // Initialize the database
         DB.initialize();
 
-        lockhaptic= DB.getselecthaptic();
-
-
-        lockhaptics= DB.getselecthaptic();
-
-        lockport=DB.getselectPORT();
-
+        lockhaptic= DB.getselecthaptic()
         locksound=DB.getselectSOUND();
-        locksoundd=locksound;
-    }
-
+        lockhaptics=lockhaptic;
+        locksoundd=locksound
+        }
 
     function hapticswitched(){
 
-        if(hapticswitch.checked == true)
+        if(hapticswitch.checked == true )
         {
-           // console.log("gedrückt und gecheckt")
-            DB.sethaptics();
+            console.log("gedrückt und gecheckt")
             lockhaptics=1;
+
         }
-        else{
-            //console.log("nicht eins sondern null")
-            DB.unsethaptics();
+        if(hapticswitch.checked == false )
+         {
+            console.log("nicht eins sondern null")
             lockhaptics=0;
         }
-    }
-
-
-
-
-
-    function lockswitched(){
-
-
-        if(lockswitch.checked == true)
-        {
-            //console.log("gedrückt und gecheckt")
-
-            DB.setlockporteins();
-            mainPage.orientat = Orientation.Portrait
-
-        }
-        else{
-
-            //console.log("nicht eins sondern null")
-
-
-            DB.setlockportnull();
-            mainPage.orientat = Orientation.All
-
-
-        }
 
     }
-
 
     function soundlockswitched(){
 
-
-        if(soundlockswitch.checked == true)
+        if(soundlockswitch.checked == true )
         {
-            //console.log("gedrückt und gecheckt")
-
-
-            DB.setlocksoundeins();
-
+            console.log("gedrückt und gecheckt")
             locksoundd=1;
-
         }
-        else{
-
-            //console.log("nicht eins sondern null")
-            DB.setlocksoundnull();
+        if(soundlockswitch.checked == false )
+         {
+            console.log("nicht eins sondern null")
             locksoundd=0;
-
-
         }
 
     }
+
+
 
 
 
@@ -148,6 +105,11 @@ Dialog{
                 }
 
             }
+
+
+
+
+
 
         }
 
@@ -221,51 +183,78 @@ Dialog{
 
                     label: "Start Value"
                 }
-
+/*
                 TextSwitch {
                     id:hapticswitch
+                  //  automaticCheck:false
                     checked:lockhaptic
                     text: "Haptic Feedback"
                     description: "Enable/disable haptic feedback"
 
-                    onCheckedChanged: {
+                    onClicked: {
 
-                        hapticswitched();
+                            hapticswitched();
+
                     }
 
                 }
-
-                TextSwitch {
+  */
+              TextSwitch {
                     id:soundlockswitch
+                  //  automaticCheck:false
                     checked:locksound
                     text: "Audio Feedback"
                     description: "Enable/disable Audio feedback"
-                    onCheckedChanged: {
-                        soundlockswitched();
-                   //     setze eine var true... und unten bei on acceptet frageich ob das hier...
 
+                    onClicked: {
+
+                        soundlockswitched();
                     }
+
                 }
 
-                TextSwitch {
-                    id:lockswitch
-                    checked:lockport
-                    text: "Lock Portrait"
-                    description: "Force portrait mode"
-                    onCheckedChanged: {
-                        lockswitched();
 
-                    }
+
                 }
             }
-        }
+
     }
 
     onAccepted: {
-        mainPage.step =stepperr;mainPage.count =startvalue; mainPage.locksoundd=locksoundd; mainPage.lockhaptics=lockhaptics
+        mainPage.step =stepperr;
+        mainPage.count =startvalue;
+        mainPage.lockhaptics=lockhaptics;
+        mainPage.locksoundd=locksoundd;
 
+/*
+            if(hapticswitch.checked == true )
+            {
+                console.log("gedrückt und gecheckt")
+                lockhaptics=1;
+                DB.sethapticseins();
 
-    }
+            };
+            if(hapticswitch.checked == false )
+             {
+                console.log("nicht eins sondern null")
+                lockhaptics=0;
+                DB.unsethaptics();
+            };
+*/
+
+    if (soundlockswitch.checked == true )
+    {
+        console.log("gedrückt und gecheckt")
+        locksoundd=1;
+        DB.setlocksoundeins();
+    };
+    if(soundlockswitch.checked == false )
+     {
+        console.log("nicht eins sondern null")
+        locksoundd=0;
+        DB.setlocksoundnull();
+    };
+}
 
 onRejected:
 {
@@ -273,7 +262,6 @@ onRejected:
 
 }
 }
-
 
 
 

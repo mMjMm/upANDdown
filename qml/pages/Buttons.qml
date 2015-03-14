@@ -11,7 +11,7 @@
 */
 
 import QtQuick 2.1
-import QtFeedback 5.0
+//import QtFeedback 5.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.0
 
@@ -39,7 +39,7 @@ SoundEffect {
        }
 
 
-
+/*
 
 HapticsEffect {
       id: rumbleEffect
@@ -50,7 +50,7 @@ HapticsEffect {
       fadeTime: 10
       fadeIntensity: 0.0
   }
-
+*/
     Rectangle{
         id:schattenall
         opacity: 0.1
@@ -87,7 +87,7 @@ HapticsEffect {
             {
 
 
-            rumbleEffect.start();
+           // rumbleEffect.start();
 
 
             }
@@ -159,7 +159,7 @@ onReleased:         {
             {
 
 
-            rumbleEffect.start();
+         //   rumbleEffect.start();
 
 
             }
