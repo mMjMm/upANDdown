@@ -47,18 +47,19 @@ mainPage.coverfontsize
         id: coverAction
 
         CoverAction {
-            iconSource:"harbour-icon-cover-up.png"
+            iconSource: "harbour-icon-cover-down.png"
            onTriggered: {
-               mainPage.increment()
+               mainPage.decrement()
            }
 
         }
 
         CoverAction {
-            iconSource: "harbour-icon-cover-down.png"
+            iconSource:"harbour-icon-cover-up.png"
 
             onTriggered: {
-                mainPage.decrement()
+                mainPage.increment()
+
             }
 
         }

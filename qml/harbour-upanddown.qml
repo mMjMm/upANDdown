@@ -24,19 +24,14 @@ import "pages"
 
 ApplicationWindow
 {
-
     id: mainWindow
-
-
     initialPage: mainPage
+
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
 
-
-
-
-        FirstPage{
-            id:mainPage
-        }
+    FirstPage{
+        id:mainPage
     }
+}
 
 

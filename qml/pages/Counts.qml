@@ -12,30 +12,23 @@ import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "config.js" as DB
 
-
 Page{
     id:page
 
     function reset() {
         remorse.execute("DELETE ALL COUNTS", function() { DB.dropTables() ;pageStack.replace(Qt.resolvedUrl("Counts.qml"))})
+
     }
 
     //reset counter animation?
     RemorsePopup { id: remorse }
-
-
-
-
 
     //Emitted after component "startup" has completed. This can be used to execute script code at startup, once the full QML environment has been established.
     Component.onCompleted: {
         // Initialize the database
         DB.initialize();
         DB.getCountName();
-
     }
-
-
 
     Rectangle {
         //it's a good idea to name it always root so I'm able to remember it everytime ;)
@@ -43,32 +36,22 @@ Page{
         width: Screen.width ; height: Screen.height
         color:"#841773"
         opacity: 0.5
-
     }
 
     SilicaFlickable {
 
         anchors.fill: parent
-
         PullDownMenu{
 
             MenuItem {
                 text: "delete all"
                 onClicked: {
-
-
                     reset()
-
-
-
+                }
             }
-        } }
-
-
-
+        }
 
         ListModel {
-
             id:mycounts
         }
 
@@ -83,9 +66,6 @@ Page{
             model: mycounts
             VerticalScrollDecorator { flickable: listView }
             HorizontalScrollDecorator { flickable: listView }
-
-
-
 
             //DISPLAY HEADER
             header: PageHeader {
@@ -111,18 +91,18 @@ Page{
                 //DELETE FUNKTION (löscht gewählten namen aus der datenbank)
 
                 function remove() {
-                    delegate.remorseAction("Deleting",function() { DB.deletecount(name) ;pageStack.replace(Qt.resolvedUrl("Counts.qml"))})
+                    delegate.remorseAction("Deleting",function() { DB.deletecount(name) ; mycounts.remove(index)})
                 }
 
 
 
                 function resume() {
-                  //  pageStack.pop( Qt.resolvedUrl("Counts.qml"),{count: counterer});
-                     DB.fontsizer();
-                     pageStack.navigateBack(mainPage.count=counterer, mainPage.namecounterer=name)
+                    //  pageStack.pop( Qt.resolvedUrl("Counts.qml"),{count: counterer});
+                    DB.fontsizer();
+                    pageStack.navigateBack(mainPage.count=counterer, mainPage.namecounterer=name)
 
 
-            }
+                }
 
 
                 ListView.onRemove: animateRemoval(delegate)

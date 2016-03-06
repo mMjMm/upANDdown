@@ -28,76 +28,54 @@
 // First, let's create a short helper function to get the database connection
 function getDatabase() {
     return LS.LocalStorage.openDatabaseSync("upanddown", "2.0", "StorageDatabase", 100000);}
-
-
-
-
-
-
 function initialize() {
     var db = getDatabase();
 
     db.transaction(
                 function(tx) {
                     tx.executeSql('CREATE TABLE IF NOT EXISTS settings(Haptic NUMBER, PortLock NUMBER,  SoundLock NUMBER)');
-                    tx.executeSql('CREATE TABLE IF NOT EXISTS currentCount(CountName, Count NUMBER)');
+                    tx.executeSql('CREATE TABLE IF NOT EXISTS currentCount(CountName text UNIQUE NOT NULL, Count NUMBER)');
 
                 });
 }
 
-
-
-
 function sethapticseins(){
-
     var db = getDatabase();
-
-     db.transaction(
+    db.transaction(
                 function(tx) {
-                 var rs=   tx.executeSql("INSERT INTO settings (Haptic) VALUES (1); ");
-
+                    var rs=   tx.executeSql("INSERT INTO settings (Haptic) VALUES (1); ");
                 }
                 )
 }
-
-
-
-
 
 function setLockPort(){
 
     var db = getDatabase();
 
-     db.transaction(
+    db.transaction(
                 function(tx) {
-                 var rs=   tx.executeSql("INSERT INTO settings (PortLock) VALUES (0); ");
+                    var rs=   tx.executeSql("INSERT INTO settings (PortLock) VALUES (0); ");
 
                 }
                 )
 }
-
-
 
 function setLockSound(){
 
     var db = getDatabase();
 
-     db.transaction(
+    db.transaction(
                 function(tx) {
-                 var rs=   tx.executeSql("INSERT INTO settings (SoundLock) VALUES (0); ");
+                    var rs=   tx.executeSql("INSERT INTO settings (SoundLock) VALUES (0); ");
 
                 }
                 )
 }
 
-
 function sethaptics(){
-
     var db = getDatabase();
-
-     db.transaction(
-                function(tx) {
-                    tx.executeSql("UPDATE settings SET Haptic=1");
+    db.transaction(
+                function(tx) {                    tx.executeSql("UPDATE settings SET Haptic=1");
 
                 }
                 )
@@ -107,7 +85,7 @@ function unsethaptics(){
 
     var db = getDatabase();
 
-     db.transaction(
+    db.transaction(
                 function(tx) {
                     tx.executeSql("UPDATE settings SET Haptic=0");
 
@@ -116,12 +94,11 @@ function unsethaptics(){
 }
 
 
-
 function setlockporteins(){
 
     var db = getDatabase();
 
-     db.transaction(
+    db.transaction(
                 function(tx) {
                     tx.executeSql("UPDATE settings SET PortLock=1");
 
@@ -134,7 +111,7 @@ function setlockportnull(){
 
     var db = getDatabase();
 
-     db.transaction(
+    db.transaction(
                 function(tx) {
                     tx.executeSql("UPDATE settings SET PortLock=0");
 
@@ -147,7 +124,7 @@ function setlocksoundeins(){
 
     var db = getDatabase();
 
-     db.transaction(
+    db.transaction(
                 function(tx) {
                     tx.executeSql("UPDATE settings SET SoundLock=1");
 
@@ -160,7 +137,7 @@ function setlocksoundnull(){
 
     var db = getDatabase();
 
-     db.transaction(
+    db.transaction(
                 function(tx) {
                     tx.executeSql("UPDATE settings SET SoundLock=0");
 
@@ -178,7 +155,7 @@ function getselecthaptic() {
         var rs = tx.executeSql('SELECT * FROM settings ;');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
-           console.debug(" Haptic:" + rs.rows.item(i).Haptic)
+           //console.debug(" Haptic:" + rs.rows.item(i).Haptic)
             select =  rs.rows.item(i).Haptic
         }
 
@@ -216,7 +193,7 @@ function getselectSOUND() {
         var rs = tx.executeSql('SELECT * FROM settings ;');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
-           console.debug(" SoundLock:" + rs.rows.item(i).SoundLock)
+            console.debug(" SoundLock:" + rs.rows.item(i).SoundLock)
             selectSoundLock =  rs.rows.item(i).SoundLock
         }
 
@@ -235,26 +212,47 @@ function insertCOUNTNAME(CountName, Count) {
     var db = getDatabase();
     var res = "";
     db.transaction(function(tx) {
+
         var rs = tx.executeSql('INSERT INTO currentCount (CountName, Count) VALUES (?,?);', [CountName, Count]);
+       // console.log(rs.rowsAffected)
+    }
 
 
-        console.log(rs.rowsAffected)
+    );
+    // The function returns “OK” if it was successful, or “Error” if it wasn't
+    return res;
+}
 
+// This function is used to write a setting into the database NAME
+function overrideCOUNTNAME(CountName, Count) {
+    var db = getDatabase();
+    var res = "";
+    var CountUPDATE = "";
+    var CountNEW = "";
+
+    db.transaction(function(tx) {
+       var rs = tx.executeSql("SELECT * FROM currentCount WHERE CountName = ?", CountName);
+        //res =rs.rows.item(0).CountName
+
+        if (rs.rows.length > 0) {
+                      res = rs.rows.item(0).CountName;
+                      // console.log("name exists")
+                       var CountUPDATE = tx.executeSql("UPDATE currentCount SET Count='" + Count + "' WHERE CountName='" + CountName + "'  " );
+                 }
+                else {
+                     //console.log("name does not exist")
+            var CountNEW = tx.executeSql('INSERT INTO currentCount (CountName, Count) VALUES (?,?);', [CountName, Count]);
+                 }
     }
     );
     // The function returns “OK” if it was successful, or “Error” if it wasn't
     return res;
 }
 
-
-
 // This function is used to retrieve a name from the database
-
-
 function getCountName() {
-
     var text
-     var countnumber
+    var countnumber
     var db = getDatabase();
     var res="";
 
@@ -262,63 +260,35 @@ function getCountName() {
         var rs = tx.executeSql('SELECT * FROM currentCount');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
-            console.debug(" CountName:" + rs.rows.item(i).CountName + " Count:" + rs.rows.item(i).Count   )
-
-
+            //console.debug(" CountName:" + rs.rows.item(i).CountName + " Count:" + rs.rows.item(i).Count   )
             text =   rs.rows.item(i).CountName
             countnumber =   rs.rows.item(i).Count
-
             mycounts.append({name:text, counterer:countnumber});
-
-
-
         }
-
     })
-
-
     return text
-
 }
-
-
-
-
 function deletecount(countLoeschen) {
     var db = getDatabase();
-
-     db.transaction(
+    db.transaction(
                 function(tx) {
                     // spieler löschen
                     tx.executeSql("DELETE  FROM currentCount WHERE CountName = ? ", countLoeschen);
-
                 }
                 )
 }
-
-
-
-
-
-
-
-
 
 function dropTables() {
     var db = getDatabase();
 
-     db.transaction(
+    db.transaction(
                 function(tx) {
                     // table löschen
                     tx.executeSql("DROP TABLE IF EXISTS settings");
-  tx.executeSql("DROP TABLE IF EXISTS currentCount");
+                    tx.executeSql("DROP TABLE IF EXISTS currentCount");
                 }
                 )
 }
-
-
-
-
 
 /////////////////////////////////////////////////
 

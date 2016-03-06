@@ -31,7 +31,6 @@ OTHER_FILES += \
     qml/pages/Buttons.qml \
     qml/pages/SaveAs.qml \
     qml/pages/Settings.qml \
-    qml/pages/Counter.qml \
     qml/pages/Counts.qml
 
 # to disable building translations every time, comment out the

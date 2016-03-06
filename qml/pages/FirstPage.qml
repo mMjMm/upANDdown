@@ -15,27 +15,22 @@
 */
 
 
-
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 import "config.js" as DB
-
 
 Page{
 
     id: mainPage
 
-    property int count
-    property int step:1
+    property double count
+    property double step:1
     property string namecounterer: " "
-
 
     property  var lockhaptic
     property  var lockhaptics
 
     property  var lockport
-
-
     property  var locksound
     property  var locksoundd
 
@@ -52,13 +47,10 @@ Page{
     function lockTOport() {
         orientat = Orientation.Portrait
     }
-
     //  States for Portrait and Landscape mode (and place the buttons accordingly
     //  remember PropertyChanges vs AnchorChanges!
-
-
-   // state: (Orientation.Portrait = isPortrait) ? "portrait" : "landscape"
-state: "portrait"
+    // state: (Orientation.Portrait = isPortrait) ? "portrait" : "landscape"
+    state: "portrait"
     states: [
         State {
             name: "landscape"
@@ -92,8 +84,8 @@ state: "portrait"
             }
 
             PropertyChanges {
-
-                target: buttons; anchors.horizontalCenterOffset: -450/2; anchors.verticalCenterOffset: -Screen.height/10
+                target: buttons; anchors.horizontalCenterOffset: (-Screen.width/2)*0.9; anchors.verticalCenterOffset: -Screen.height/8
+                //target: buttons; anchors.horizontalCenterOffset: -450/2; anchors.verticalCenterOffset: -Screen.height/8
             }
 
             AnchorChanges { target: label; anchors.horizontalCenter: root.horizontalCenter; anchors.bottom: buttons.top;
@@ -105,7 +97,6 @@ state: "portrait"
 
 
     Component.onCompleted: {
-
         // Initialize the database
         DB.initialize();
         DB.fontsizer();
@@ -118,21 +109,18 @@ state: "portrait"
         if (lockhaptic===undefined)
         {
 
-            console.debug("select ist undefiend")
+            //console.debug("select ist undefiend")
             DB.sethapticseins();
-
-               lockhaptic=1
+            lockhaptic=1
         }
 
         if (lockport===undefined)
         {
-
             //   console.debug("lockport ist undefiend")
             DB.setlockportnull();
-
         }
 
-     //   lockhaptic= DB.getselecthaptic();
+        //   lockhaptic= DB.getselecthaptic();
         lockport=DB.getselectPORT();
         lockhaptics=lockhaptic;
 
@@ -158,18 +146,34 @@ state: "portrait"
 
     function increment() {
 
-        count = count + step
+        if (step % 1 != 0)
+        {
 
+            count = count + step
+            count= count.toFixed(1);
+        }
+
+        else
+        {
+            count = count + step
+        }
     }
 
     function decrement() {
 
-        count = count - step
+
+        if (step % 1 != 0)
+        {
+
+            count = count - step
+            count= count.toFixed(1);
+        }
+        else
+        {
+            count = count - step
+        }
 
     }
-
-
-
 
     //Reset counter function
     function reset() {
@@ -181,29 +185,24 @@ state: "portrait"
 
     SilicaFlickable {
 
-
         anchors.fill: parent
         contentHeight: parent.height
 
         PullDownMenu {
 
-
             MenuItem {
                 text: "save as"
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("SaveAs.qml"))
-
                 }
             }
 
             MenuItem {
                 text: "counted"
                 onClicked: {
-
                     pageStack.push(Qt.resolvedUrl("Counts.qml"))
                 }
             }
-
 
             MenuItem {
                 text: "settings"
@@ -221,8 +220,6 @@ state: "portrait"
                 }
             }
         }
-
-
         Rectangle {
 
             id:root //it's a good idea to name it always root so I'm able to remember it everytime ;)
@@ -243,25 +240,18 @@ state: "portrait"
             }
         }
 
-
-
-
         Label {
             id:textfade
-            x: Theme.paddingLarge
-            y:97
-
-
+            anchors.top: column.bottom
+            anchors.left: root.left
+            anchors.leftMargin: Theme.paddingLarge
             text:namecounterer.substring(0,22);
-
             //text: qsTr(namecounterer)
             color: Theme.secondaryHighlightColor
             font.pixelSize: Theme.fontSizeLarge
-
         }
 
         OpacityRampEffect {
-
             sourceItem: textfade
             direction: OpacityRamp.LeftToRight
             offset:0.7
@@ -272,7 +262,7 @@ state: "portrait"
             font.family: Theme.fontFamily
             color:"white"
             font.pixelSize: fontsize
-            text:count
+            text:count//.toFixed(1)
         }
 
         //import from Buttons.qml

@@ -18,18 +18,14 @@ import "config.js" as DB
 
 Dialog{
 
+    id:page
 
-id:page
-
- property string placehodertext
- property string edittext
-
-
+    property string placehodertext
+    property string edittext
 
     Component.onCompleted: {
         // Initialize the database
         DB.initialize();
-
 
         if (mainPage.namecounterer===" ")
         {
@@ -41,24 +37,13 @@ id:page
         }
     }
 
-
-
-
-
-
-
     Rectangle {
-//it's a good idea to name it always root so I'm able to remember it everytime ;)
+        //it's a good idea to name it always root so I'm able to remember it everytime ;)
         id:root
         width: Screen.width ; height: Screen.height
         color:"#841773"
         opacity: 0.5
-
     }
-
-
-
-
 
     Column {
         id: column
@@ -74,7 +59,7 @@ id:page
     Text{
         id:label
         anchors.top: parent.top
-        anchors.topMargin: 100
+        anchors.topMargin: 150
         anchors.horizontalCenter: root.horizontalCenter
         font.family: Theme.fontFamily
         color:"white"
@@ -82,90 +67,68 @@ id:page
         text:mainPage.count
     }
 
-
-
     TextField {
 
-
         id: namecount
-
         anchors.top: parent.top
-        anchors.topMargin: 350
+        anchors.topMargin: Screen.height/2.8
         width: parent.width
-
-
         implicitWidth: _editor.implicitWidth + Theme.paddingSmall
-                           + Theme.itemSizeSmall*2  // width of two icons
-            height: Math.max(Theme.itemSizeMedium, _editor.height + Theme.paddingMedium + Theme.paddingSmall)
+                       + Theme.itemSizeSmall*2  // width of two icons
+        height: Math.max(Theme.itemSizeMedium, _editor.height + Theme.paddingMedium + Theme.paddingSmall)
+        focusOutBehavior: FocusBehavior.ClearPageFocus
+        font {
+            pixelSize: Theme.fontSizeSmall
+            family:    Theme.fontFamily
+        }
 
-            focusOutBehavior: FocusBehavior.ClearPageFocus
-
-            font {
-                pixelSize: Theme.fontSizeSmall
-                family:    Theme.fontFamily
-
-            }
-
-            textLeftMargin: Theme.itemSizeSmall + Theme.paddingMedium
-            textRightMargin: Theme.itemSizeSmall + Theme.paddingMedium
-            textTopMargin: height/2 - _editor.implicitHeight/2
-            labelVisible: false
-
-
-
+        textLeftMargin: Theme.itemSizeSmall + Theme.paddingMedium
+        textRightMargin: Theme.itemSizeSmall + Theme.paddingMedium
+        textTopMargin: height/2 - _editor.implicitHeight/2
+        labelVisible: false
 
         placeholderText:placehodertext
         text:edittext
         focus: true
 
+        //    inputMethodHints: Qt.ImhNoPredictiveText
 
+        background: Component {
+            Item {
+                anchors.fill: parent
+                IconButton {
+                    id: clearButton
+                    anchors {
+                        right: parent.right
+                        rightMargin: Theme.paddingLarge
+                    }
+                    width: icon.width
+                    height: parent.height
+                    icon.source: "image://theme/icon-m-clear"
 
+                    enabled: namecount.enabled
 
-    //    inputMethodHints: Qt.ImhNoPredictiveText
+                    //  opacity: namecount.text.length > 0 ? 1 : 0
+                    Behavior on opacity {
+                        FadeAnimation {}
+                    }
 
-            background: Component {
-                Item {
-                    anchors.fill: parent
-                    IconButton {
-                                  id: clearButton
-                                  anchors {
-                                      right: parent.right
-                                      rightMargin: Theme.paddingLarge
-                                  }
-                                  width: icon.width
-                                  height: parent.height
-                                  icon.source: "image://theme/icon-m-clear"
-
-                                  enabled: namecount.enabled
-
-                                //  opacity: namecount.text.length > 0 ? 1 : 0
-                                  Behavior on opacity {
-                                      FadeAnimation {}
-                                  }
-
-                                  onClicked: {
-                                      namecount.text = ""
-                                      namecount._editor.forceActiveFocus()
-                                  }
-                              }
-                          }
-
-
-
-
-
-}
-
+                    onClicked: {
+                        namecount.text = ""
+                        namecount._editor.forceActiveFocus()
+                    }
+                }
+            }
+        }
     }
-
-
-
-
     onAccepted: {
-        DB.insertCOUNTNAME(namecount.text, mainPage.count);
+        //abfragen ob name schon in der Datenbank? wenn ja Overwrite?
+
+
+       //DB.insertCOUNTNAME(namecount.text, mainPage.count);
+
+        DB.overrideCOUNTNAME(namecount.text,mainPage.count)
+
         mainPage.namecounterer=namecount.text
-
     }
-
-
 }

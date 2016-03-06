@@ -11,7 +11,7 @@
 */
 
 import QtQuick 2.1
-//import QtFeedback 5.0
+import QtFeedback 5.0
 import Sailfish.Silica 1.0
 import QtMultimedia 5.0
 
@@ -39,7 +39,7 @@ SoundEffect {
        }
 
 
-/*
+
 
 HapticsEffect {
       id: rumbleEffect
@@ -50,12 +50,14 @@ HapticsEffect {
       fadeTime: 10
       fadeIntensity: 0.0
   }
-*/
+
     Rectangle{
         id:schattenall
         opacity: 0.1
-        width: 450
-        height: 440
+      //width: 450
+      //height: 440
+       width: screen.width*0.9
+       height: screen.height*0.52
 
       color: "#000000"
     }
@@ -68,15 +70,10 @@ HapticsEffect {
         opacity:0.6
     }
 
-
-
-
     BackgroundItem {
         id:mousedown
         anchors.fill: downRECT;
         visible: true
-
-
 
         onPressed:        {
             minusshadow.color="white"
@@ -87,7 +84,7 @@ HapticsEffect {
             {
 
 
-           // rumbleEffect.start();
+           rumbleEffect.start();
 
 
             }
@@ -159,7 +156,7 @@ onReleased:         {
             {
 
 
-         //   rumbleEffect.start();
+            rumbleEffect.start();
 
 
             }

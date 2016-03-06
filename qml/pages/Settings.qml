@@ -17,15 +17,12 @@ import Sailfish.Silica 1.0
 //import QtFeedback 5.0
 import "config.js" as DB
 
-
-
-
 Dialog{
 
-    property var step
-    property int stepperr:1
+    property double step
+    property double stepperr:1
 
-    property int startvalue
+    property double startvalue
 
     property var  lockhaptic
     property  int  lockhaptics
@@ -43,19 +40,19 @@ Dialog{
         locksound=DB.getselectSOUND();
         lockhaptics=lockhaptic;
         locksoundd=locksound
-        }
+    }
 
     function hapticswitched(){
 
         if(hapticswitch.checked == true )
         {
-            console.log("gedrückt und gecheckt")
+           // console.log("gedrückt und gecheckt")
             lockhaptics=1;
 
         }
         if(hapticswitch.checked == false )
-         {
-            console.log("nicht eins sondern null")
+        {
+            //console.log("nicht eins sondern null")
             lockhaptics=0;
         }
 
@@ -65,23 +62,18 @@ Dialog{
 
         if(soundlockswitch.checked == true )
         {
-            console.log("gedrückt und gecheckt")
+            //console.log("gedrückt und gecheckt")
             locksoundd=1;
         }
         if(soundlockswitch.checked == false )
-         {
-            console.log("nicht eins sondern null")
+        {
+           // console.log("nicht eins sondern null")
             locksoundd=0;
         }
 
     }
 
-
-
-
-
     SilicaFlickable {
-
 
         anchors.fill: parent
         contentHeight: parent.height
@@ -95,26 +87,14 @@ Dialog{
 
         }
 
-
         PullDownMenu {
-
 
             MenuItem {
                 text: "about"
                 onClicked: {    pageStack.push(Qt.resolvedUrl("About.qml"), {dataContainer: root})
                 }
-
             }
-
-
-
-
-
-
         }
-
-
-
 
         Column {
             id: column
@@ -145,11 +125,11 @@ Dialog{
                 Slider {
                     id: sliderer
                     value: mainPage.step
-                    minimumValue:1
+                    minimumValue:0.1
                     maximumValue:10
-                    stepSize: 1
+                    stepSize: 0.1
                     width: parent.width+10
-                    valueText: value.toFixed(0)
+                    valueText: value.toFixed(1)
 
                     onValueChanged: {
                         stepperr = value
@@ -157,7 +137,6 @@ Dialog{
 
                     label: "Step Size"
                 }
-
 
                 Label{
                     anchors.horizontalCenter:colummm.horizontalCenter
@@ -178,13 +157,13 @@ Dialog{
                     valueText: value.toFixed(0)
 
                     onValueChanged: {
-                    startvalue = value
+                        startvalue = value
                     }
 
                     label: "Start Value"
                 }
-/*
-                TextSwitch {
+
+           TextSwitch {
                     id:hapticswitch
                   //  automaticCheck:false
                     checked:lockhaptic
@@ -198,10 +177,10 @@ Dialog{
                     }
 
                 }
-  */
-              TextSwitch {
+
+                TextSwitch {
                     id:soundlockswitch
-                  //  automaticCheck:false
+                    //  automaticCheck:false
                     checked:locksound
                     text: "Audio Feedback"
                     description: "Enable/disable Audio feedback"
@@ -213,10 +192,8 @@ Dialog{
 
                 }
 
-
-
-                }
             }
+        }
 
     }
 
@@ -226,41 +203,38 @@ Dialog{
         mainPage.lockhaptics=lockhaptics;
         mainPage.locksoundd=locksoundd;
 
-/*
+
             if(hapticswitch.checked == true )
             {
-                console.log("gedrückt und gecheckt")
+                //console.log("gedrückt und gecheckt")
                 lockhaptics=1;
                 DB.sethapticseins();
 
             };
             if(hapticswitch.checked == false )
              {
-                console.log("nicht eins sondern null")
+                //console.log("nicht eins sondern null")
                 lockhaptics=0;
                 DB.unsethaptics();
             };
-*/
 
-    if (soundlockswitch.checked == true )
+
+        if (soundlockswitch.checked == true )
+        {
+            locksoundd=1;
+            DB.setlocksoundeins();
+        };
+        if(soundlockswitch.checked == false )
+        {
+            locksoundd=0;
+            DB.setlocksoundnull();
+        };
+    }
+
+    onRejected:
     {
-        console.log("gedrückt und gecheckt")
-        locksoundd=1;
-        DB.setlocksoundeins();
-    };
-    if(soundlockswitch.checked == false )
-     {
-        console.log("nicht eins sondern null")
-        locksoundd=0;
-        DB.setlocksoundnull();
-    };
-}
 
-onRejected:
-{
-
-
-}
+    }
 }
 
 
