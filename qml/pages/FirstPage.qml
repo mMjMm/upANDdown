@@ -141,14 +141,10 @@ Page{
         locksoundd=DB.getselectSOUND();
     }
 
-
     //count functions:
-
     function increment() {
-
-        if (step % 1 != 0)
+        if (step % 1 != 0) //check if it is a decimal number
         {
-
             count = count + step
             count= count.toFixed(1);
         }
@@ -191,14 +187,14 @@ Page{
         PullDownMenu {
 
             MenuItem {
-                text: "save as"
+                text: qsTr("save as")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("SaveAs.qml"))
                 }
             }
 
             MenuItem {
-                text: "counted"
+                text: qsTr("counted")
                 onClicked: {
                     pageStack.push(Qt.resolvedUrl("Counts.qml"))
                 }
@@ -213,7 +209,7 @@ Page{
             }
             //reset COUNTER menu
             MenuItem {
-                text: "reset counter"
+                text: qsTr("reset counter")
                 onClicked: {
                     //rufe reset funktion auf!
                     reset()

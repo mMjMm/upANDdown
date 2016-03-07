@@ -202,7 +202,10 @@ function getselectSOUND() {
 
 }
 
+
 //save the counts
+
+
 // This function is used to write a setting into the database NAME
 function insertCOUNTNAME(CountName, Count) {
     var db = getDatabase();
@@ -212,6 +215,8 @@ function insertCOUNTNAME(CountName, Count) {
         var rs = tx.executeSql('INSERT INTO currentCount (CountName, Count) VALUES (?,?);', [CountName, Count]);
         // console.log(rs.rowsAffected)
     }
+
+
     );
     // The function returns “OK” if it was successful, or “Error” if it wasn't
     return res;
@@ -249,7 +254,7 @@ function overrideCOUNTNAME(CountName, Count) {
         if (rs.rows.length > 0) {
             res = rs.rows.item(0).CountName;
             // console.log("name exists")
-            var CountUPDATE = tx.executeSql("UPDATE currentCount SET Count='"+Count+"'WHERE CountName='"+CountName+"'  " );
+            var CountUPDATE = tx.executeSql("UPDATE currentCount SET Count='" + Count + "' WHERE CountName='" + CountName + "'  " );
         }
         else {
             //console.log("name does not exist")
@@ -292,7 +297,7 @@ function sortByName() {
     var res="";
 
     db.transaction(function(tx) {
-        var rs = tx.executeSql('SELECT * FROM currentCount ORDER BY CountName ASC ;');
+        var rs = tx.executeSql('SELECT * FROM currentCount ORDER BY CountName COLLATE NOCASE ASC ;');
         for (var i = 0; i < rs.rows.length; i++) {
             //DEBUG
             //console.debug(" CountName:" + rs.rows.item(i).CountName + " Count:" + rs.rows.item(i).Count   )
@@ -305,15 +310,7 @@ function sortByName() {
 }
 
 
-function deletecount(countLoeschen) {
-    var db = getDatabase();
-    db.transaction(
-                function(tx) {
-                    // spieler löschen
-                    tx.executeSql("DELETE  FROM currentCount WHERE CountName = ? ", countLoeschen);
-                }
-                )
-}
+
 
 /*
 db.transaction(function(tx) {

@@ -19,47 +19,39 @@ import "config.js" as DB
 
 Item{
 
+    id:control
+    smooth:true
+    property int soundanonn
+    property int hapticson //hapticsquestion
 
-id:control
+    SoundEffect {
+        id: soundUp
+        source: "/usr/share/sounds/jolla-ambient/stereo/keyboard_letter.wav"
+        muted : false
+    }
 
-smooth:true
-property int soundanonn
-property int hapticson //hapticsquestion
+    SoundEffect {
+        id: soundDown
+        source: "/usr/share/sounds/jolla-ambient/stereo/keyboard_option.wav"
+        muted : false
+    }
 
-SoundEffect {
-           id: soundUp
-            source: "/usr/share/sounds/jolla-ambient/stereo/keyboard_letter.wav"
-            muted : false
-}
+    ThemeEffect {
+        id: buttonBuzz
+        effect: ThemeEffect.Press
+    }
 
-SoundEffect {
-           id: soundDown
-           source: "/usr/share/sounds/jolla-ambient/stereo/keyboard_option.wav"
-           muted : false
-       }
-
-
-
-
-HapticsEffect {
-      id: rumbleEffect
-      attackIntensity: 0.0
-      attackTime: 30
-      intensity: 1
-      duration: 70 // set up the duration here, in millisecond
-      fadeTime: 10
-      fadeIntensity: 0.0
-  }
+    ThemeEffect {
+        id: keypadBuzz
+        effect: ThemeEffect.PressWeak
+    }
 
     Rectangle{
         id:schattenall
         opacity: 0.1
-      //width: 450
-      //height: 440
-       width: screen.width*0.9
-       height: screen.height*0.52
-
-      color: "#000000"
+        width: screen.width*0.9
+        height: screen.height*0.52
+        color: "#000000"
     }
 
     Rectangle{
@@ -82,16 +74,12 @@ HapticsEffect {
 
             if(hapticson===1)
             {
-
-
-           rumbleEffect.start();
-
-
+                buttonBuzz.play()
             }
 
             if (soundanonn===1)
             {
-            soundDown.play()
+                soundDown.play()
             }
             decrement()
             DB.fontsizer()
@@ -99,13 +87,11 @@ HapticsEffect {
         }
 
 
-onReleased:         {
+        onReleased:         {
             minusshadow.color="black"
             minus.opacity=1
             minusshadow.opacity=0.2
-
         }
-
     }
 
     Rectangle{
@@ -125,7 +111,6 @@ onReleased:         {
         height: minus.width/5
         anchors.centerIn: downRECT
         color:"white"
-
     }
 
     Rectangle{
@@ -142,8 +127,6 @@ onReleased:         {
         anchors.fill: upRECT;
         visible: true
 
-
-
         onPressed: {
             plus_mshadow.color="white"
             plusshadow.color="white"
@@ -154,17 +137,12 @@ onReleased:         {
 
             if (hapticson)
             {
-
-
-            rumbleEffect.start();
-
-
+                buttonBuzz.play()
             }
-
 
             if (soundanonn===1)
             {
-            soundUp.play()
+                soundUp.play()
             }
             increment()
             DB.fontsizer()
@@ -180,15 +158,12 @@ onReleased:         {
             plus_mshadow.opacity=0.2
             plusshadow.opacity=0.2
         }
-
     }
-
 
     Rectangle{
         id:plus_mshadow
         width: upRECT.width /2
         height: minus.width/5
-
         opacity: 0.2
         anchors.centerIn: upRECT
         color:"black"
@@ -200,8 +175,6 @@ onReleased:         {
         id:plusshadow
         height: upRECT.width /2
         width: minus.width/5
-
-
         opacity: 0.2
         anchors.centerIn: upRECT
         color:"black"
@@ -223,7 +196,5 @@ onReleased:         {
         width: minus.width/5
         anchors.centerIn: upRECT
         color:"white"
-
     }
-
 }

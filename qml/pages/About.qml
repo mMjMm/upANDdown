@@ -69,7 +69,7 @@ Page {
                     id:describtion0
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: Theme.fontSizeLarge
-                    text: "Simple up and down counter by "
+                    text:qsTr("Simple up and down counter by")
                     color: "white"
 
                 }
@@ -78,7 +78,7 @@ Page {
                     id:describtion1
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: Theme.fontSizeExtraSmall-3
-                    text: "michael johannes muik"
+                    text: qsTr("michael johannes muik") //my name
                     color: "white"
 
                 }
@@ -86,7 +86,7 @@ Page {
                     id:describtion2
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: Theme.fontSizeExtraSmall-3
-                    text: "with acoustic feedback reset and save function "
+                    text: qsTr("with acoustic feedback reset and save function ")
                     color: "white"
 
                 }
@@ -97,7 +97,7 @@ Page {
                     id:describtion4
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: Theme.fontSizeExtraSmall-3
-                    text: "Count whatever you want (for example yellow binbags!)"
+                    text: qsTr("Count whatever you want (for example yellow binbags!)")
                     color: "white"
 
                 }
@@ -121,7 +121,7 @@ Page {
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: Theme.fontSizeExtraSmall-3
                     anchors.topMargin: 5
-                    text: "For feedback, bugreports, feature requests or <br> donations please use the email-adress below:"
+                    text:qsTr( "For feedback, bugreports, feature requests or <br> donations please use the email-adress below:")
                     color: "white"
 
                 }
@@ -131,7 +131,7 @@ Page {
                     anchors.horizontalCenter: parent.horizontalCenter
                     font.pixelSize: Theme.fontSizeLarge
                     anchors.topMargin: 3
-                    text:"muiki@mur.at"
+                    text:qsTr("muiki@mur.at") //myEMAIL
                     color: Theme.highlightColor
 
                     MouseArea {

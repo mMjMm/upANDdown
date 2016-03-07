@@ -21,12 +21,9 @@ Dialog{
 
     property double step
     property double stepperr:1
-
     property double startvalue
-
     property var  lockhaptic
     property  int  lockhaptics
-
     property var locksound
     property int locksoundd
 
@@ -46,7 +43,7 @@ Dialog{
 
         if(hapticswitch.checked == true )
         {
-           // console.log("gedrückt und gecheckt")
+            // console.log("gedrückt und gecheckt")
             lockhaptics=1;
 
         }
@@ -67,14 +64,13 @@ Dialog{
         }
         if(soundlockswitch.checked == false )
         {
-           // console.log("nicht eins sondern null")
+            // console.log("nicht eins sondern null")
             locksoundd=0;
         }
 
     }
 
     SilicaFlickable {
-
         anchors.fill: parent
         contentHeight: parent.height
 
@@ -90,7 +86,7 @@ Dialog{
         PullDownMenu {
 
             MenuItem {
-                text: "about"
+                text: qsTr("about")
                 onClicked: {    pageStack.push(Qt.resolvedUrl("About.qml"), {dataContainer: root})
                 }
             }
@@ -103,13 +99,11 @@ Dialog{
             spacing: 35
 
             DialogHeader {
-                acceptText: "Settings"
+                acceptText: qsTr("Settings")
             }
 
             Column {
                 id:colummm
-
-
                 // No spacing in this column
                 width: parent.width
 
@@ -119,7 +113,7 @@ Dialog{
                     font.family: Theme.fontFamily
                     color:"white"
                     font.pixelSize: Theme.fontSizeMedium
-                    text:"Change step size:"
+                    text:qsTr("Change step size:")
                 }
 
                 Slider {
@@ -135,7 +129,7 @@ Dialog{
                         stepperr = value
                     }
 
-                    label: "Step Size"
+                    label: qsTr("Step Size")
                 }
 
                 Label{
@@ -144,7 +138,7 @@ Dialog{
                     font.family: Theme.fontFamily
                     color:"white"
                     font.pixelSize: Theme.fontSizeMedium
-                    text:"Set start value:"
+                    text:qsTr("Set start value:")
                 }
 
                 Slider {
@@ -160,41 +154,34 @@ Dialog{
                         startvalue = value
                     }
 
-                    label: "Start Value"
+                    label: qsTr("Start Value")
                 }
 
-           TextSwitch {
+                TextSwitch {
                     id:hapticswitch
-                  //  automaticCheck:false
+                    //  automaticCheck:false
                     checked:lockhaptic
-                    text: "Haptic Feedback"
+                    text: qsTr("Haptic Feedback")
                     description: "Enable/disable haptic feedback"
 
                     onClicked: {
-
-                            hapticswitched();
-
+                        hapticswitched();
                     }
-
                 }
 
                 TextSwitch {
                     id:soundlockswitch
                     //  automaticCheck:false
                     checked:locksound
-                    text: "Audio Feedback"
+                    text: qsTr("Audio Feedback")
                     description: "Enable/disable Audio feedback"
 
                     onClicked: {
-
                         soundlockswitched();
                     }
-
                 }
-
             }
         }
-
     }
 
     onAccepted: {
@@ -203,21 +190,19 @@ Dialog{
         mainPage.lockhaptics=lockhaptics;
         mainPage.locksoundd=locksoundd;
 
+        if(hapticswitch.checked == true )
+        {
+            //console.log("gedrückt und gecheckt")
+            lockhaptics=1;
+            DB.sethapticseins();
 
-            if(hapticswitch.checked == true )
-            {
-                //console.log("gedrückt und gecheckt")
-                lockhaptics=1;
-                DB.sethapticseins();
-
-            };
-            if(hapticswitch.checked == false )
-             {
-                //console.log("nicht eins sondern null")
-                lockhaptics=0;
-                DB.unsethaptics();
-            };
-
+        };
+        if(hapticswitch.checked == false )
+        {
+            //console.log("nicht eins sondern null")
+            lockhaptics=0;
+            DB.unsethaptics();
+        };
 
         if (soundlockswitch.checked == true )
         {
@@ -229,11 +214,6 @@ Dialog{
             locksoundd=0;
             DB.setlocksoundnull();
         };
-    }
-
-    onRejected:
-    {
-
     }
 }
 

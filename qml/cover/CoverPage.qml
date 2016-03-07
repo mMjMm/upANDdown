@@ -13,15 +13,11 @@
 import QtQuick 2.1
 import Sailfish.Silica 1.0
 
-
-
-
 CoverBackground {
-    id:parent
-   // property int coverfontsize:180
 
+    id:parent
     Component.onCompleted: {
-mainPage.coverfontsize
+        mainPage.coverfontsize
 
     }
 
@@ -36,22 +32,20 @@ mainPage.coverfontsize
     }
 
     Label {
-    id: countLabel
-    anchors.centerIn: parent
-    text: mainPage.count
-    font.pixelSize: mainPage.coverfontsize
+        id: countLabel
+        anchors.centerIn: parent
+        text: mainPage.count
+        font.pixelSize: mainPage.coverfontsize
     }
-
 
     CoverActionList {
         id: coverAction
 
         CoverAction {
             iconSource: "harbour-icon-cover-down.png"
-           onTriggered: {
-               mainPage.decrement()
-           }
-
+            onTriggered: {
+                mainPage.decrement()
+            }
         }
 
         CoverAction {
@@ -61,7 +55,6 @@ mainPage.coverfontsize
                 mainPage.increment()
 
             }
-
         }
     }
 }

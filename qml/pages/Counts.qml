@@ -28,6 +28,21 @@ Page{
         // Initialize the database
         DB.initialize();
         DB.getCountName();
+
+    }
+
+
+    ///////////////////////////////////////////////
+    //sortby functions
+    ///////////////////////////////////////////////
+
+    function sortByName(){
+        mycounts.clear();
+        DB.sortByName();
+    }
+    function sortByDate(){
+        mycounts.clear();
+        DB.getCountName();
     }
 
     Rectangle {
@@ -39,14 +54,25 @@ Page{
     }
 
     SilicaFlickable {
-
         anchors.fill: parent
-        PullDownMenu{
 
+        PullDownMenu{
             MenuItem {
-                text: "delete all"
+                text: qsTr("delete all")
                 onClicked: {
-                    reset()
+                    reset();
+                }
+            }
+            MenuItem {
+                text: qsTr("sort by name")
+                onClicked: {
+                    sortByName();
+                }
+            }
+            MenuItem {
+                text: qsTr("sort by date")
+                onClicked: {
+                    sortByDate();
                 }
             }
         }
@@ -54,15 +80,17 @@ Page{
         ListModel {
             id:mycounts
         }
-
         //The SilicaListView type provides a ListView with Sailfish-specific behaviors and additional properties.
 
         SilicaListView {
-
             id:listView
-            spacing:30
+            spacing:8
             anchors.fill: parent
-            //  width: 480; height: 800
+
+            clip: true
+            boundsBehavior: Flickable.DragAndOvershootBounds
+            snapMode: ListView.SnapToItem
+
             model: mycounts
             VerticalScrollDecorator { flickable: listView }
             HorizontalScrollDecorator { flickable: listView }
@@ -75,8 +103,8 @@ Page{
             //DISPLAYED when no players added
             ViewPlaceholder {
                 enabled: listView.count == 0
-                text: "so far nothing counted"
-                hintText: "count something, please!"
+                text: qsTr("so far nothing counted")
+                hintText: qsTr("count something, please!")
             }
 
 
@@ -100,56 +128,52 @@ Page{
                     //  pageStack.pop( Qt.resolvedUrl("Counts.qml"),{count: counterer});
                     DB.fontsizer();
                     pageStack.navigateBack(mainPage.count=counterer, mainPage.namecounterer=name)
-
-
                 }
-
 
                 ListView.onRemove: animateRemoval(delegate)
 
                 Column{
                     id:layout
-                    Text{
-                        id:mylabel
-                        x:10
-                        font.pointSize: 24
-                        font.bold: true
-                        text:counterer
-                        color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                    Rectangle {
+                        id:countsrect
+                        width: root.width -10
+                        height: mylabel.height+ nametext.height
+                        color: index % 2 == 0 ?"#208d22c5" : "#308d22c5"
+                        radius:3
 
-
+                        Text{
+                            id:mylabel
+                            x: Theme.paddingLarge
+                            font.pixelSize: Theme.fontSizeLarge
+                            font.bold: true
+                            text:counterer
+                            opacity:1
+                            color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                        }
+                        Text{
+                            id:nametext
+                            anchors.top:mylabel.bottom
+                            width: Screen.width-10
+                            x: Theme.paddingLarge
+                            wrapMode: "WordWrap"
+                            opacity:1
+                            text: name
+                            color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+                        }
                     }
-                    Text{
-
-                        id:nametext
-                        width: Screen.width
-                        x:10
-                        wrapMode: "WordWrap"
-                        text: name
-                        color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
-
-                    }
-
-
                     //CONTEXT MENÜ
                     Component {
                         id: contextMenuComponent
                         ContextMenu {
                             id:contextMenu
-
+                            width: root.width -10
                             MenuItem {
-
-                                text: "Resume"
-
+                                text: qsTr("Resume")
                                 onClicked:resume();
-
-
                             }
 
                             MenuItem {
-
-                                text: "Delete"
-
+                                text: qsTr("Delete")
                                 onClicked:remove()
 
                             }

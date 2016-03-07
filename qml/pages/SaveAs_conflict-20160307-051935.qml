@@ -98,7 +98,6 @@ Dialog{
         inputMethodHints: Qt.ImhNoPredictiveText
 
         background: Component {
-
             Item {
                 anchors.fill: parent
                 IconButton {
@@ -124,7 +123,12 @@ Dialog{
             }
         }
 
-
+        Rectangle {
+            id:countsrect
+                    anchors.fill: parent
+            opacity:0.1
+            color:"white"
+             }
 
     }
 
