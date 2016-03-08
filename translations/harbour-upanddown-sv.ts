@@ -113,6 +113,11 @@
         <translation>Räknade</translation>
     </message>
     <message>
+        <location filename="../qml/pages/FirstPage.qml" line="204"/>
+        <source>settings</source>
+        <translation>Inställningar</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/FirstPage.qml" line="212"/>
         <source>reset counter</source>
         <translation>Återställ räknare</translation>
@@ -121,6 +126,25 @@
         <location filename="../qml/pages/FirstPage.qml" line="235"/>
         <source>upanddown</source>
         <translation>upANDdown</translation>
+    </message>
+</context>
+<context>
+    <name>SaveAs</name>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="24"/>
+        <location filename="../qml/pages/SaveAs.qml" line="139"/>
+        <source>save as</source>
+        <translation>Spara som</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="133"/>
+        <source>Overwrite </source>
+        <translation>Skriv över</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="152"/>
+        <source>saving</source>
+        <translation>Sparar</translation>
     </message>
 </context>
 <context>
@@ -161,9 +185,19 @@
         <translation>Haptisk återkoppling</translation>
     </message>
     <message>
+        <location filename="../qml/pages/Settings.qml" line="165"/>
+        <source>Enable/disable haptic feedback</source>
+        <translation>Aktivera/Inaktivera haptisk återkoppling</translation>
+    </message>
+    <message>
         <location filename="../qml/pages/Settings.qml" line="176"/>
         <source>Audio Feedback</source>
         <translation>Ljudåterkoppling</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="177"/>
+        <source>Enable/disable Audio feedback</source>
+        <translation>Aktivera/Inaktivera ljudåterkoppling</translation>
     </message>
 </context>
 </TS>
