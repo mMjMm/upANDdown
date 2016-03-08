@@ -12,7 +12,7 @@
 */
 
 
-import QtQuick 2.1
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 import "config.js" as DB
 
@@ -21,7 +21,7 @@ Dialog{
     id:page
     property string placehodertext
     property string edittext
-    property string acceptt: "save as"
+    property string acceptt: qsTr("save as")
     property string string: ""
     property string trimmedString: ""
 
@@ -49,7 +49,6 @@ Dialog{
 
     Column {
         id: column
-
         width: root.width
         spacing: 35
         DialogHeader {
@@ -67,7 +66,6 @@ Dialog{
         font.pixelSize: mainPage.fontsize
         text:mainPage.count
     }
-
 
     TextField {
 
@@ -123,12 +121,7 @@ Dialog{
                 }
             }
         }
-
-
-
     }
-
-
 
     acceptPending: {
         var nameExists= DB.nameAlreadyExist(namecount.text)
@@ -137,13 +130,13 @@ Dialog{
             console.log("name already exists ")
             console.log(nameExists)
             var length = 20;
-            string ="Overwrite " + namecount.text
+            string =qsTr("Overwrite ") + namecount.text
             trimmedString = string.substring(0, length);
             acceptt=trimmedString;
 
         }
         else{
-           acceptt="save as"
+           acceptt=qsTr("save as")
         }
 
     }
@@ -156,7 +149,7 @@ Dialog{
         //DB.overrideCOUNTNAME(namecount.text,mainPage.count)
 
         DB.overrideCOUNTNAME(namecount.text,mainPage.count)
-        acceptt="saving"
+        acceptt=qsTr("saving")
 
         mainPage.namecounterer=namecount.text
     }

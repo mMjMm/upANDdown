@@ -60,42 +60,42 @@
 <context>
     <name>Counts</name>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="61"/>
+        <location filename="../qml/pages/Counts.qml" line="60"/>
         <source>delete all</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="67"/>
+        <location filename="../qml/pages/Counts.qml" line="66"/>
         <source>sort by name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="73"/>
+        <location filename="../qml/pages/Counts.qml" line="72"/>
         <source>sort by date</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="100"/>
+        <location filename="../qml/pages/Counts.qml" line="99"/>
         <source>Counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="106"/>
+        <location filename="../qml/pages/Counts.qml" line="105"/>
         <source>so far nothing counted</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="107"/>
+        <location filename="../qml/pages/Counts.qml" line="106"/>
         <source>count something, please!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="171"/>
+        <location filename="../qml/pages/Counts.qml" line="170"/>
         <source>Resume</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="176"/>
+        <location filename="../qml/pages/Counts.qml" line="175"/>
         <source>Delete</source>
         <translation type="unfinished"></translation>
     </message>
@@ -113,6 +113,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qml/pages/FirstPage.qml" line="204"/>
+        <source>settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/FirstPage.qml" line="212"/>
         <source>reset counter</source>
         <translation type="unfinished"></translation>
@@ -120,6 +125,25 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="235"/>
         <source>upanddown</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>SaveAs</name>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="24"/>
+        <location filename="../qml/pages/SaveAs.qml" line="139"/>
+        <source>save as</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="133"/>
+        <source>Overwrite </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="152"/>
+        <source>saving</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -161,8 +185,18 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../qml/pages/Settings.qml" line="165"/>
+        <source>Enable/disable haptic feedback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/Settings.qml" line="176"/>
         <source>Audio Feedback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="177"/>
+        <source>Enable/disable Audio feedback</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

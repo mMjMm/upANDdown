@@ -12,7 +12,7 @@
 
 */
 
-import QtQuick 2.1
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 //import QtFeedback 5.0
 import "config.js" as DB
@@ -162,7 +162,7 @@ Dialog{
                     //  automaticCheck:false
                     checked:lockhaptic
                     text: qsTr("Haptic Feedback")
-                    description: "Enable/disable haptic feedback"
+                    description: qsTr("Enable/disable haptic feedback")
 
                     onClicked: {
                         hapticswitched();
@@ -174,7 +174,7 @@ Dialog{
                     //  automaticCheck:false
                     checked:locksound
                     text: qsTr("Audio Feedback")
-                    description: "Enable/disable Audio feedback"
+                    description:qsTr( "Enable/disable Audio feedback")
 
                     onClicked: {
                         soundlockswitched();

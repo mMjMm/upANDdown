@@ -8,7 +8,7 @@ this page is used to display the players and add new
 
 */
 
-import QtQuick 2.1
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 import "config.js" as DB
 
@@ -30,7 +30,6 @@ Page{
         DB.getCountName();
 
     }
-
 
     ///////////////////////////////////////////////
     //sortby functions

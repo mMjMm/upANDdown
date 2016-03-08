@@ -15,7 +15,7 @@
 */
 
 
-import QtQuick 2.1
+import QtQuick 2.2
 import Sailfish.Silica 1.0
 import "config.js" as DB
 
@@ -201,7 +201,7 @@ Page{
             }
 
             MenuItem {
-                text: "settings"
+                text: qsTr("settings")
                 onClicked: {
 
                     pageStack.push(Qt.resolvedUrl("Settings.qml"))
