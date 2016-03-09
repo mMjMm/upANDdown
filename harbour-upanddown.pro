@@ -33,8 +33,20 @@ OTHER_FILES += \
     qml/pages/Settings.qml \
     qml/pages/Counts.qml
 
+
 # to disable building translations every time, comment out the
 # following CONFIG line
 CONFIG += sailfishapp_i18n
-TRANSLATIONS += translations/upanddown-de.ts
+
+
+
+TRANSLATIONS  += translations/harbour-upanddown-de.ts
+
+# Thanks, eson57
+TRANSLATIONS  += translations/harbour-upanddown-sv.ts
+
+
+
+
+
 

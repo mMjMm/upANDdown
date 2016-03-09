@@ -4,98 +4,70 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="37"/>
+        <location filename="../qml/pages/About.qml" line="40"/>
         <source>about upanddown</source>
-        <translation>Om upANDdown</translation>
+        <translation type="unfinished">Om upANDdown</translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="44"/>
-        <source>upanddown ver.0.9.0 </source>
-        <translation>upANDdown ver.0.9.0 </translation>
+        <location filename="../qml/pages/About.qml" line="45"/>
+        <source>upanddown ver.0.9.1 </source>
+        <translation type="unfinished">upANDdown ver.0.9.0  {0.9.1 ?}</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="72"/>
-        <source>Simple up and down counter by</source>
-        <translation>Enkel upp- och nerräknare av</translation>
+        <source>Simple up and down counter by Michael Johannes Muik. With outstanding features like acoustic feedback, reset and save function. Count whatever you want (for example yellow binbags!) </source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="81"/>
-        <source>michael johannes muik</source>
-        <translation>Michael Johannes Muik</translation>
+        <location filename="../qml/pages/About.qml" line="101"/>
+        <source>For feedback, bugreports, feature requests or donations please use the email-adress below:</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="89"/>
-        <source>with acoustic feedback reset and save function </source>
-        <translation>med aukustisk återställnings- och sparafunktion </translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="100"/>
-        <source>Count whatever you want (for example yellow binbags!)</source>
-        <translation>Räkna vad du vill (t.ex. gröna soptunnor)!</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="124"/>
-        <source>For feedback, bugreports, feature requests or &lt;br&gt; donations please use the email-adress below:</source>
-        <translation>Använd nedanstående e-postadress, för&lt;br&gt;återkoppling, felrapporter och donationer:</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="134"/>
+        <location filename="../qml/pages/About.qml" line="119"/>
         <source>muiki@mur.at</source>
-        <translation>muiki@mur.at</translation>
-    </message>
-</context>
-<context>
-    <name>About_conflict-20160306-090555</name>
-    <message>
-        <location filename="../qml/pages/About_conflict-20160306-090555.qml" line="37"/>
-        <source>about upanddown</source>
-        <translation>Om upANDdown</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About_conflict-20160306-090555.qml" line="44"/>
-        <source>upanddown ver.0.8.1 </source>
-        <translation>upANDdown ver.0.8.1 </translation>
+        <translation type="unfinished">muiki@mur.at</translation>
     </message>
 </context>
 <context>
     <name>Counts</name>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="61"/>
+        <location filename="../qml/pages/Counts.qml" line="60"/>
         <source>delete all</source>
         <translation>Ta bort alla</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="67"/>
+        <location filename="../qml/pages/Counts.qml" line="66"/>
         <source>sort by name</source>
         <translation>Sortera efter namn</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="73"/>
+        <location filename="../qml/pages/Counts.qml" line="72"/>
         <source>sort by date</source>
         <translation>Sortera efter datum</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="100"/>
+        <location filename="../qml/pages/Counts.qml" line="99"/>
         <source>Counted</source>
         <translation>Räknade</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="106"/>
+        <location filename="../qml/pages/Counts.qml" line="105"/>
         <source>so far nothing counted</source>
         <translation>Inget räknat hittills</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="107"/>
+        <location filename="../qml/pages/Counts.qml" line="106"/>
         <source>count something, please!</source>
         <translation>Räkna något, tack!</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="171"/>
+        <location filename="../qml/pages/Counts.qml" line="170"/>
         <source>Resume</source>
         <translation>Återuppta</translation>
     </message>
     <message>
-        <location filename="../qml/pages/Counts.qml" line="176"/>
+        <location filename="../qml/pages/Counts.qml" line="175"/>
         <source>Delete</source>
         <translation>Ta bort</translation>
     </message>
@@ -113,6 +85,11 @@
         <translation>Räknade</translation>
     </message>
     <message>
+        <location filename="../qml/pages/FirstPage.qml" line="204"/>
+        <source>settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/FirstPage.qml" line="212"/>
         <source>reset counter</source>
         <translation>Återställ räknare</translation>
@@ -121,6 +98,25 @@
         <location filename="../qml/pages/FirstPage.qml" line="235"/>
         <source>upanddown</source>
         <translation>upANDdown</translation>
+    </message>
+</context>
+<context>
+    <name>SaveAs</name>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="24"/>
+        <location filename="../qml/pages/SaveAs.qml" line="139"/>
+        <source>save as</source>
+        <translation type="unfinished">Spara som</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="133"/>
+        <source>Overwrite </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/SaveAs.qml" line="152"/>
+        <source>saving</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -161,9 +157,19 @@
         <translation>Haptisk återkoppling</translation>
     </message>
     <message>
+        <location filename="../qml/pages/Settings.qml" line="165"/>
+        <source>Enable/disable haptic feedback</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../qml/pages/Settings.qml" line="176"/>
         <source>Audio Feedback</source>
         <translation>Ljudåterkoppling</translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/Settings.qml" line="177"/>
+        <source>Enable/disable Audio feedback</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

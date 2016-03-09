@@ -4,42 +4,27 @@
 <context>
     <name>About</name>
     <message>
-        <location filename="../qml/pages/About.qml" line="37"/>
+        <location filename="../qml/pages/About.qml" line="40"/>
         <source>about upanddown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="44"/>
-        <source>upanddown ver.0.9.0 </source>
+        <location filename="../qml/pages/About.qml" line="45"/>
+        <source>upanddown ver.0.9.1 </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="72"/>
-        <source>Simple up and down counter by</source>
+        <source>Simple up and down counter by Michael Johannes Muik. With outstanding features like acoustic feedback, reset and save function. Count whatever you want (for example yellow binbags!) </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="81"/>
-        <source>michael johannes muik</source>
+        <location filename="../qml/pages/About.qml" line="101"/>
+        <source>For feedback, bugreports, feature requests or donations please use the email-adress below:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/pages/About.qml" line="89"/>
-        <source>with acoustic feedback reset and save function </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="100"/>
-        <source>Count whatever you want (for example yellow binbags!)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="124"/>
-        <source>For feedback, bugreports, feature requests or &lt;br&gt; donations please use the email-adress below:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/About.qml" line="134"/>
+        <location filename="../qml/pages/About.qml" line="119"/>
         <source>muiki@mur.at</source>
         <translation type="unfinished"></translation>
     </message>
@@ -54,6 +39,34 @@
     <message>
         <location filename="../qml/pages/About_conflict-20160306-090555.qml" line="44"/>
         <source>upanddown ver.0.8.1 </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>About_conflict-20160308-041349</name>
+    <message>
+        <location filename="../qml/pages/About_conflict-20160308-041349.qml" line="37"/>
+        <source>about upanddown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About_conflict-20160308-041349.qml" line="44"/>
+        <source>upanddown ver.0.9.0 </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About_conflict-20160308-041349.qml" line="72"/>
+        <source>Simple up and down counter by michael johannes muik with acoustic feedback reset and save function. Count whatever you want (for example yellow binbags!) </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About_conflict-20160308-041349.qml" line="130"/>
+        <source>For feedback, bugreports, feature requests or donations please use the email-adress below:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../qml/pages/About_conflict-20160308-041349.qml" line="140"/>
+        <source>muiki@mur.at</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
