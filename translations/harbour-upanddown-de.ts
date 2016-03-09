@@ -16,17 +16,18 @@
     <message>
         <location filename="../qml/pages/About.qml" line="72"/>
         <source>Simple up and down counter by Michael Johannes Muik. With outstanding features like acoustic feedback, reset and save function. Count whatever you want (for example yellow binbags!) </source>
-        <translation type="unfinished"></translation>
+        <translation>Einfacher Zähler von Michael Johannes Muik. Er wartet mit wunderbaren Funktionen wie akustischem Feedback, zurücksetz und speicher Funktion auf! Zähle, was auch immer zu zählen ist. (Zum Beispiel gelbe Säcke!)</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="101"/>
-        <source>For feedback, bugreports, feature requests or donations please use the email-adress below:</source>
-        <translation type="unfinished"></translation>
+        <source>For feedback, bugreports, feature requests or donations please use the email-adress below or press the flattr-button:</source>
+        <translation>
+        Für Anregungen, Bugreports oder Spenden einfach eine E-Mail an unten stehende Adresse schicken oder Flattr-Button drücken</translation>
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="119"/>
         <source>muiki@mur.at</source>
-        <translation type="unfinished"></translation>
+        <translation>muiki@mur.at</translation>
     </message>
 </context>
 <context>
@@ -34,42 +35,42 @@
     <message>
         <location filename="../qml/pages/Counts.qml" line="60"/>
         <source>delete all</source>
-        <translation type="unfinished"></translation>
+        <translation>Alles löschen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Counts.qml" line="66"/>
         <source>sort by name</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Name sortieren</translation>
     </message>
     <message>
         <location filename="../qml/pages/Counts.qml" line="72"/>
         <source>sort by date</source>
-        <translation type="unfinished"></translation>
+        <translation>Nach Datum sortieren</translation>
     </message>
     <message>
         <location filename="../qml/pages/Counts.qml" line="99"/>
         <source>Counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Bisher gezählt</translation>
     </message>
     <message>
         <location filename="../qml/pages/Counts.qml" line="105"/>
         <source>so far nothing counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Bisher noch nichts gezählt...</translation>
     </message>
     <message>
         <location filename="../qml/pages/Counts.qml" line="106"/>
         <source>count something, please!</source>
-        <translation type="unfinished"></translation>
+        <translation> Bitte zähle etwas!</translation>
     </message>
     <message>
         <location filename="../qml/pages/Counts.qml" line="170"/>
         <source>Resume</source>
-        <translation type="unfinished"></translation>
+        <translation>weiterzählen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Counts.qml" line="175"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>löschen</translation>
     </message>
 </context>
 <context>
@@ -77,27 +78,27 @@
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="190"/>
         <source>save as</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichern unter</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="197"/>
         <source>counted</source>
-        <translation type="unfinished"></translation>
+        <translation>Bisher gezählt</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="204"/>
         <source>settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="212"/>
         <source>reset counter</source>
-        <translation type="unfinished"></translation>
+        <translation>Zurücksetzen</translation>
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="235"/>
         <source>upanddown</source>
-        <translation type="unfinished"></translation>
+        <translation>upanddown</translation>
     </message>
 </context>
 <context>
@@ -106,17 +107,17 @@
         <location filename="../qml/pages/SaveAs.qml" line="24"/>
         <location filename="../qml/pages/SaveAs.qml" line="139"/>
         <source>save as</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichern unter</translation>
     </message>
     <message>
         <location filename="../qml/pages/SaveAs.qml" line="133"/>
         <source>Overwrite </source>
-        <translation type="unfinished"></translation>
+        <translation>Überschreiben</translation>
     </message>
     <message>
         <location filename="../qml/pages/SaveAs.qml" line="152"/>
         <source>saving</source>
-        <translation type="unfinished"></translation>
+        <translation>wird gespeichert</translation>
     </message>
 </context>
 <context>
@@ -124,52 +125,52 @@
     <message>
         <location filename="../qml/pages/Settings.qml" line="89"/>
         <source>about</source>
-        <translation type="unfinished"></translation>
+        <translation>Über upANDdown</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="102"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="116"/>
         <source>Change step size:</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrittgröße festlegen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="132"/>
         <source>Step Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Schrittgröße</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="141"/>
         <source>Set start value:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anfangswert einstellen</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="157"/>
         <source>Start Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Anfangswert</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="164"/>
         <source>Haptic Feedback</source>
-        <translation type="unfinished"></translation>
+        <translation>Haptisches Feedback</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="165"/>
         <source>Enable/disable haptic feedback</source>
-        <translation type="unfinished"></translation>
+        <translation>Haptisches Feedback ein/ausschalten</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="176"/>
         <source>Audio Feedback</source>
-        <translation type="unfinished"></translation>
+        <translation>Akustisches Feedback</translation>
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="177"/>
         <source>Enable/disable Audio feedback</source>
-        <translation type="unfinished"></translation>
+        <translation>Akustisches Feedback ein/ausschalten</translation>
     </message>
 </context>
 </TS>

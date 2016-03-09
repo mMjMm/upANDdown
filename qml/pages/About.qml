@@ -98,7 +98,7 @@ Page {
             anchors.top: describtion1.bottom
             anchors.topMargin: Theme.paddingLarge
             font.pixelSize: Theme.fontSizeExtraSmall-3
-            text:qsTr( "For feedback, bugreports, feature requests or donations please use the email-adress below:")
+            text:qsTr( "For feedback, bugreports, feature requests or donations please use the email-adress below or press the flattr-button:")
             horizontalAlignment:Text.AlignHCenter
             color: "white"
             wrapMode: Text.WordWrap

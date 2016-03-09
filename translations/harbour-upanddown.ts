@@ -20,7 +20,7 @@
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="101"/>
-        <source>For feedback, bugreports, feature requests or donations please use the email-adress below:</source>
+        <source>For feedback, bugreports, feature requests or donations please use the email-adress below or press the flattr-button:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
