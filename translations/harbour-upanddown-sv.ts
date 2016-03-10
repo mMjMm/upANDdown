@@ -12,25 +12,21 @@
         <location filename="../qml/pages/About.qml" line="45"/>
         <source>upanddown ver.0.9.1 </source>
         <translation>upANDdown ver.0.9.1 </translation>
->>>>>>> eson57-patch-1
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="72"/>
         <source>Simple up and down counter by Michael Johannes Muik. With outstanding features like acoustic feedback, reset and save function. Count whatever you want (for example yellow binbags!) </source>
         <translation>Enkel upp- och nerräknare av Michael Johannes Muik. Med enastående funktioner som aukustisk återkoppling, återställnings- och sparfunktion. Räkna vad du vill (t.ex. gula soptunnor)! </translation>
->>>>>>> eson57-patch-1
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="101"/>
         <source>For feedback, bugreports, feature requests or donations please use the email-adress below or press the flattr-button:</source>
         <translation>Använd nedanstående e-postadress eller flattr-knapp för återkoppling, felrapporter, funktionsförfrågningar och donationer:</translation>
->>>>>>> eson57-patch-1
     </message>
     <message>
         <location filename="../qml/pages/About.qml" line="119"/>
         <source>muiki@mur.at</source>
         <translation>muiki@mur.at</translation>
->>>>>>> eson57-patch-1
     </message>
 </context>
 <context>
@@ -92,7 +88,6 @@
         <location filename="../qml/pages/FirstPage.qml" line="204"/>
         <source>settings</source>
         <translation>Inställningar</translation>
->>>>>>> eson57-patch-1
     </message>
     <message>
         <location filename="../qml/pages/FirstPage.qml" line="212"/>
@@ -112,19 +107,16 @@
         <location filename="../qml/pages/SaveAs.qml" line="139"/>
         <source>save as</source>
         <translation>Spara som</translation>
->>>>>>> eson57-patch-1
     </message>
     <message>
         <location filename="../qml/pages/SaveAs.qml" line="133"/>
         <source>Overwrite </source>
         <translation>Skriv över </translation>
->>>>>>> eson57-patch-1
     </message>
     <message>
         <location filename="../qml/pages/SaveAs.qml" line="152"/>
         <source>saving</source>
         <translation>Sparar</translation>
->>>>>>> eson57-patch-1
     </message>
 </context>
 <context>
@@ -168,7 +160,6 @@
         <location filename="../qml/pages/Settings.qml" line="165"/>
         <source>Enable/disable haptic feedback</source>
         <translation>Aktivera/Inaktivera haptisk återkoppling</translation>
->>>>>>> eson57-patch-1
     </message>
     <message>
         <location filename="../qml/pages/Settings.qml" line="176"/>
@@ -179,11 +170,6 @@
         <location filename="../qml/pages/Settings.qml" line="177"/>
         <source>Enable/disable Audio feedback</source>
         <translation>Aktivera/Inaktivera aukustisk återkoppling</translation>
-    </message>
-    <message>
-        <location filename="../qml/pages/Settings.qml" line="177"/>
-        <source>Enable/disable Audio feedback</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
