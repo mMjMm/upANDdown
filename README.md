@@ -3,7 +3,7 @@ upANDdown
 This is a simple UP and DOWN counter for Sailfish OS. 
 
 
-![alt tag](https://github.com/mMjMm/upANDdown/blob/master/screenshots/20141220112618.png)
+![alt tag](https://github.com/mMjMm/upANDdown/blob/master/screenshots/nexus4screenshots/Screenshot-16-03-08-22-32-27.png)
 
 FEATURES:
 
